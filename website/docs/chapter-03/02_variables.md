@@ -470,3 +470,6 @@ Examples and more details on variable scope, such as `TEST` and `GLOBAL` scope c
 
 
 
+
+
+

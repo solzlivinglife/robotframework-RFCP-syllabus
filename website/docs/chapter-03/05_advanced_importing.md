@@ -120,7 +120,7 @@ Remote libraries are libraries that are connected remotely via a network connect
 So the actual library is running as a server, and the library `Remote`
 is connecting as a client and connects the keywords of the server to Robot Framework.
 Therefore, it needs the server's address and port to connect to.
-Because there may be more than one Remote Library, we need to define the used library name as well.
+Because there may be more than one Remote [Library](../glossary#keyword-library), we need to define the used library name as well.
 ```robotframework
 *** Settings ***
 Library    Remote    uri=http://127.0.0.1:8270       AS    EmbeddedAPI
@@ -193,6 +193,9 @@ Using Remote Libraries
     EmbeddedAPI.Close Contact   15
     DeviceAPI.Verify Contact    15    1
 ```
+
+
+
 
 
 

@@ -84,7 +84,7 @@ The following sections are allowed in initialization files:
 
 - **`*** Keywords ***` Section (optional)**:
 
-  Define keywords that are available to the initialization file for [Suite Setup](../glossary#suite-setup), Suite Teardown, [Test Setup](../glossary#test-setup), or [Test Teardown](../glossary#test-teardown).
+  Define keywords that are available to the initialization file for [Suite Setup](../glossary#suite-setup), [Suite Teardown](../glossary#suite-teardown), [Test Setup](../glossary#test-setup), or [Test Teardown](../glossary#test-teardown).
 
 - **`*** Comments ***` Section (optional)**:
 
@@ -121,6 +121,9 @@ Cleanup Environment
     Reset Database
     Stop Server
 ```
+
+
+
 
 
 

@@ -146,9 +146,9 @@ This status is used if an element was executed successfully without any errors o
 **Composite elements** are `PASS` if all their executed body elements are pass.
 E.g. in case of User Keywords this means that if all keywords or Robot Framework language statements that were directly called by that [User Keyword](../glossary#user-keyword) were `PASS` the [User Keyword](../glossary#user-keyword) itself is considered `PASS`.
 
-Library Keywords like `Run Keyword And Expect Error`, from BuiltIn Library, do `PASS` if the keyword they are internally calling does raise an error with the expected message or type.
+[Library](../glossary#keyword-library) Keywords like `Run Keyword And Expect Error`, from BuiltIn [Library](../glossary#keyword-library), do `PASS` if the keyword they are internally calling does raise an error with the expected message or type.
 
-That means that a composite element like suite, test|task or User Keyword may be `PASS` even if some of its deeper child elements are `FAIL`.
+That means that a composite element like suite, test|task or [User Keyword](../glossary#user-keyword) may be `PASS` even if some of its deeper child elements are `FAIL`.
 
 
 ### 2.3.3.2 FAIL
@@ -173,7 +173,7 @@ Exceptions are teardowns, as explained in [Chapter 4: Advanced Structuring and E
 **Composite elements** are `FAIL` if at least one of their executed direct body elements are `FAIL`.
 Therefore a failure typically distributes upwards through the hierarchy of elements until it reaches the root suite.
 
-A User Keyword is `FAIL` if one of its called Library Keywords is `FAIL`.
+A User [Keyword](../glossary#keyword) is `FAIL` if one of its called [Library](../glossary#keyword-library) Keywords is `FAIL`.
 A test|task is `FAIL` if one of its directly called Keywords is `FAIL`.
 A suite (file) is `FAIL` if one of its test|task is `FAIL` and
 a suite (directory) is `FAIL` if one of its suites (file) is `FAIL`.
@@ -199,5 +199,8 @@ There are basically two kinds of logging information in Robot Framework.
 
 Log messages can be written with different levels of severity (i.e. `INFO`, `DEBUG`, `TRACE`, `WARN` or `ERROR`).
 Which levels are written to the log can be controlled by the log level of an execution. Further information in later chapters.
+
+
+
 
 

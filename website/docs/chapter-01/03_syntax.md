@@ -152,7 +152,10 @@ While tests and tasks are organized into suites, **keywords** are organized into
 
 Central resource files and libraries allow the separation of concerns, making the automation more modular and reusable across multiple suites, tests or tasks.
 
-The concepts of organizing are fundamental to working with Robot Framework and contribute to its flexibility and scalability in both test automation and RPA.
+The concepts of organizing are fundamental to working with Robot Framework and contribute to its flexibility and scalability in both test automation and [RPA](../glossary#robotic-process-automation).
+
+
+
 
 
 

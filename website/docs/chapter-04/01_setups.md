@@ -55,9 +55,9 @@ It is used to prepare the environment or perform actions that need to occur befo
 Since it is only executed once before all tests|tasks or child suites, it can save time, rather than executing the action for each test|task individually.
 
 **Key characteristics of [Suite](../glossary#suite) Setup:**
-- Suite Setup is a single keyword call with potential argument values.
+- [Suite Setup](../glossary#suite-setup) is a single keyword call with potential argument values.
 - Executed before any tests|tasks and child suites in the suite.
-- If the Suite Setup fails, all tests|tasks in the suite and its child suites are marked as failed, and they are not executed.
+- If the [Suite](../glossary#suite) Setup fails, all tests|tasks in the suite and its child suites are marked as failed, and they are not executed.
 - Logged in the execution log as a separate section, indicating the setup status.
 
 **Typical use cases:**
@@ -67,7 +67,7 @@ Since it is only executed once before all tests|tasks or child suites, it can sa
 - Preparing a system under automation to meet the suite's requirements.
 - Loading configurations or resources shared across multiple tests|tasks.
 
-Example of defining a Suite Setup:
+Example of defining a [Suite Setup](../glossary#suite-setup):
 
 ```robotframework
 *** Settings ***
@@ -106,7 +106,7 @@ To disable the setup for a specific test|task, you can set `[Setup]    NONE`, wh
 **Key characteristics of [Test|Task Setup](../glossary#test-setup):**
 - Test|[Task Setup](../glossary#test-setup) is a single keyword call with potential argument values.
 - Executed before the test|task starts.
-- If the Test|Task Setup fails, the test|task is marked as failed, and its body, including its main keywords, is not executed.
+- If the [Test|[Task](../glossary#task) Setup](../glossary#test-setup) fails, the test|task is marked as failed, and its body, including its main keywords, is not executed.
 - Can be set globally for all tests|tasks in a suite and overridden locally.
 - Logged in the execution log as a separate section, indicating the setup status.
 
@@ -115,7 +115,7 @@ To disable the setup for a specific test|task, you can set `[Setup]    NONE`, wh
 - Executing preparation steps to navigate to the automated task or feature under test.
 - Distinguishing phases of a test|task in *setup* (aka *preparation* or *precondition checking*), *steps*, and *teardown* (aka *clean up* or *postconditions*).
 
-Example of defining a default Test|Task Setup in the suite settings and overriding it on a test case:
+Example of defining a default Test|[Task Setup](../glossary#test-setup) in the suite settings and overriding it on a test case:
 
 ```robotframework
 *** Settings ***
@@ -156,9 +156,9 @@ A **Keyword Setup** is executed before the body of a user keyword is executed.
 It allows for preparation steps specific to that keyword or ensures that the keyword's requirements are met before execution.
 
 **Key characteristics of [Keyword](../glossary#keyword) Setup:**
-- Keyword Setup is a single keyword call with potential argument values.
+- [Keyword](../glossary#keyword) Setup is a single keyword call with potential argument values.
 - Executed before the keyword's body.
-- If the Keyword Setup fails, the keyword's body is not executed.
+- If the [Keyword](../glossary#keyword) Setup fails, the keyword's body is not executed.
 - Logged in the execution log as a separate section, indicating the setup status.
 
 **Typical use cases:**
@@ -166,7 +166,7 @@ It allows for preparation steps specific to that keyword or ensures that the key
 - Initializing variables or data structures.
 - Ensuring preconditions specific to the keyword are met.
 
-Example of defining a Keyword Setup:
+Example of defining a [Keyword](../glossary#keyword) Setup:
 
 ```robotframework
 *** Keywords ***
@@ -174,6 +174,9 @@ Process Data
     [Setup]    Open Data Connection
     Process the Data
 ```
+
+
+
 
 
 

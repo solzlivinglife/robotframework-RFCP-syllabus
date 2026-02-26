@@ -6,6 +6,7 @@ This script automatically adds links to glossary terms throughout the documentat
 
 NEW in v4:
 - Handles Test|Task notation (e.g., "Test|Task Setup" → links to "Test Setup")
+- Excludes learning_objectives.md (used for auto-generating LO numbers)
 
 FEATURES:
 - Uses relative paths for Docusaurus compatibility  
@@ -18,6 +19,7 @@ This prevents glossary links from appearing in:
 - Sidebar navigation (generated from headings)
 - Previous/Next navigation (uses page titles)
 - Table of contents
+- Learning objectives numbering system
 """
 
 import re
@@ -330,6 +332,10 @@ class GlossaryLinker:
             if 'glossary' in md_file.name.lower():
                 continue
             
+            # Skip learning_objectives.md (used for auto-generating LO numbers)
+            if 'learning_objectives' in md_file.name.lower():
+                continue
+            
             overall_stats['total_files'] += 1
             file_stats = self.process_markdown_file(md_file, dry_run)
             
@@ -427,6 +433,7 @@ def main():
     print(f"Dry run: {args.dry_run}")
     print(f"Relative paths: {use_relative}")
     print(f"Test|Task notation: ENABLED")
+    print(f"Excluded files: glossary.md, learning_objectives.md")
     print()
     
     stats = linker.process_all_markdown_files(dry_run=args.dry_run)

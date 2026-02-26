@@ -61,17 +61,17 @@ A **Suite Teardown** is executed after all tests|tasks and all child suites in a
 The [Suite Teardown](../glossary#suite-teardown) is executed regardless of the outcome of the tests|tasks within the suite, even if the suite setup fails.
 
 **Key characteristics of [Suite](../glossary#suite) Teardown:**
-- Suite Teardown is a single keyword call with potential argument values.
+- [Suite Teardown](../glossary#suite-teardown) is a single keyword call with potential argument values.
 - Executed after all tests|tasks and child suites have completed.
 - Runs even if the [Suite Setup](../glossary#suite-setup) fails or any test|task within the suite fails.
-- If the Suite Teardown fails, all tests|tasks in the suite are marked as failed in reports and logs.
-- All keywords within the Suite Teardown are executed, even if one of them fails, ensuring all cleanup actions are attempted.
+- If the [Suite](../glossary#suite) Teardown fails, all tests|tasks in the suite are marked as failed in reports and logs.
+- All keywords within the [Suite Teardown](../glossary#suite-teardown) are executed, even if one of them fails, ensuring all cleanup actions are attempted.
 
 **Typical use cases:**
 - Cleaning up the environment after all test|task executions.
 - Performing actions that need to occur after the entire suite has finished running.
 
-Example of defining a Suite Teardown:
+Example of defining a [Suite](../glossary#suite) Teardown:
 
 ```robotframework
 *** Settings ***
@@ -110,12 +110,12 @@ If you want to disable the teardown for a specific test|task, you can set `[Tear
 
 It is recommended to define the local `[Teardown]` setting as the last line of the test|task.
 
-**Key characteristics of Test|Task Teardown:**
-- Test|Task Teardown is a single keyword call with potential argument values.
+**Key characteristics of [Test|[Task](../glossary#task) Teardown](../glossary#test-teardown):**
+- Test|[Task Teardown](../glossary#test-teardown) is a single keyword call with potential argument values.
 - Executed after the test|task has been executed, regardless of its status.
 - Runs even if the Test|[Task Setup](../glossary#test-setup) fails.
-- If the Test|Task Teardown fails, the test|task is marked as failed in reports and logs.
-- All keywords within the Test|Task Teardown are executed, even if one of them fails.
+- If the [Test|[Task](../glossary#task) Teardown](../glossary#test-teardown) fails, the test|task is marked as failed in reports and logs.
+- All keywords within the Test|[Task Teardown](../glossary#test-teardown) are executed, even if one of them fails.
 - Can be set globally for all tests|tasks in a suite and overridden locally.
 
 **Typical use cases:**
@@ -125,7 +125,7 @@ It is recommended to define the local `[Teardown]` setting as the last line of t
 - Distinguishing phases of a test|task in *setup* (aka *preparation* or *precondition checking*), *steps*, and *teardown* (aka *clean up* or *postconditions*).
 
 
-Example of defining a default Test|Task Teardown in the suite settings:
+Example of defining a default [Test|[Task](../glossary#task) Teardown](../glossary#test-teardown) in the suite settings:
 
 ```robotframework
 *** Settings ***
@@ -171,17 +171,17 @@ ensuring that any resources used within the keyword are properly released indepe
 For better readability, it should be written as the last line of a keyword.
 
 **Key characteristics of [Keyword](../glossary#keyword) Teardown:**
-- Keyword Teardown is a single keyword call with potential argument values.
+- [Keyword](../glossary#keyword) Teardown is a single keyword call with potential argument values.
 - Executed after the keyword body has been executed, regardless of its status.
 - Runs even if the keyword's setup fails.
-- All keywords within the Keyword Teardown are executed, even if one of them fails.
+- All keywords within the [Keyword](../glossary#keyword) Teardown are executed, even if one of them fails.
 
 **Typical use cases:**
 - Closing temporary files or connections opened within the keyword.
 - Resetting variables or states altered during keyword execution.
 - Logging additional information after keyword execution.
 
-Example of defining a Keyword Teardown:
+Example of defining a [Keyword](../glossary#keyword) Teardown:
 
 ```robotframework
 *** Keywords ***
@@ -190,6 +190,9 @@ Process Data
     Process the Data
     [Teardown]    Close Data Connection
 ```
+
+
+
 
 
 

@@ -36,11 +36,11 @@ but the specific teaching methods, order and pace may be adapted by the instruct
 ## 0.2 About "Robot Framework® Certified Professional"
 The [Robot Framework® Certified Professional](./glossary#robot-framework-certified-professional) ([RFCP](./glossary#robot-framework-certified-professional)®) certification represents the foundational level of expertise in Robot Framework. It provides participants with a strong understanding of the core principles, syntax, and basic control structures needed to develop effective automation scripts.
 
-While the RFCP® includes an introduction to advanced features such as FOR-Loops and IF statements,
+While the [RFCP](./glossary#robot-framework-certified-professional)® includes an introduction to advanced features such as FOR-Loops and IF statements,
 the focus is primarily on awareness rather than in-depth mastery,
 leaving detailed exploration of these topics to the more advanced future certification levels.
 
-RFCP® concentrates on essential concepts such as keyword-driven automation, script execution, and integrating external libraries.
+[RFCP](./glossary#robot-framework-certified-professional)® concentrates on essential concepts such as keyword-driven automation, script execution, and integrating external libraries.
 It is designed for those seeking proficiency in Robot Framework’s core functionalities while gaining an overview of its broader capabilities.
 This certification does not require or teach domain-specific automation knowledge, such as web, API, or database automation.
 
@@ -88,11 +88,11 @@ Throughout this syllabus, participants will progress through these knowledge lev
 ## 0.5 About Accredited Training Providers
 
 Accredited Training Providers are organizations officially accredited by the [Robot Framework Foundation](./glossary#robot-framework-foundation) to offer certified training programs for a specific certification level.
-These partners shall deliver high-quality, structured courses designed to prepare candidates for the Robot Framework® Certified Professional (RFCP®) exam and other future Robot Framework certifications.
+These partners shall deliver high-quality, structured courses designed to prepare candidates for the [Robot Framework® Certified Professional](./glossary#robot-framework-certified-professional) ([RFCP](./glossary#robot-framework-certified-professional)®) exam and other future Robot Framework certifications.
 
 All training providers are members of the [Robot Framework Foundation](./glossary#robot-framework-foundation),
-and their training materials have been reviewed by independent Robot Framework experts chosen by the Robot Framework Foundation to ensure the Foundation's quality standards.
-Only these Accredited Training Providers are permitted to refer to their courses as "Robot Framework®" training or use the term "Robot Framework® Certified Professional" or "RFCP®" in connection with their programs, due to the trademark on these terms.
+and their training materials have been reviewed by independent Robot Framework experts chosen by the [Robot Framework Foundation](./glossary#robot-framework-foundation) to ensure the Foundation's quality standards.
+Only these Accredited Training Providers are permitted to refer to their courses as "Robot Framework®" training or use the term "[Robot Framework® Certified Professional](./glossary#robot-framework-certified-professional)" or "RFCP®" in connection with their programs, due to the trademark on these terms.
 
 Trainings can be exclusively pursued through these partners, but obtaining a certificate is not dependent on completing their courses, allowing flexibility for candidates to self-study if desired.
 
@@ -145,4 +145,7 @@ Special recognition is given to **Gerwin Laagland**, **Simon Meggle**, and **Fra
 **Acknowledgment**
 
 The creation of the "Robot Framework Certified Professional®" syllabus stands as a testament to the dedication and generosity of its contributors. Most of the work has been done pro bono, reflecting a deep commitment to the principles of open-source collaboration and knowledge sharing. Each contributor—from those who meticulously reviewed and refined the content to those who laid its very foundation—has left a lasting impact. Their combined efforts have ensured that this document serves as a meaningful and accessible resource. We extend our heartfelt gratitude to everyone involved for their invaluable contributions.
+
+
+
 

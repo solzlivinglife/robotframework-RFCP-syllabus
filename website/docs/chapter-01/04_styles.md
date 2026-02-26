@@ -21,7 +21,7 @@ Further system level :term[test cases]{term="[Test Case](../glossary#test-case)"
 The approach of both styles is different in that way,
 that the *Behavior-Driven Style* is a **declarative** specification,
 where the script describe/declare what the system should do or how it should behave,
-while the *Keyword-Driven Style* is an **imperative** specification,
+while the *[Keyword](../glossary#keyword)-Driven Style* is an **imperative** specification,
 where the script specifies what the automation should do to control the system.
 
 
@@ -48,7 +48,7 @@ In **Keyword-Driven Specification**, automation steps are expressed through a se
 Keywords define the specific actions that must be executed in a particular order, similar to procedural programming.
 The emphasis is on the **actions performed by the automation/tester**.
 
-For example, in Robot Framework, a Keyword-Driven test might look like:
+For example, in Robot Framework, a [Keyword](../glossary#keyword)-Driven test might look like:
 ```robotframework
 *** Test Cases ***
 Verify Foundation Link
@@ -108,7 +108,7 @@ Robot Framework allows you to create **user keywords** that can further call oth
 
 :::K1[LO-1.4.3]
 
-Recall the differences between Keyword-Driven and [Behavior-Driven Specification](../glossary#behavior-driven-specification)
+Recall the differences between [Keyword](../glossary#keyword)-Driven and [Behavior-Driven Specification](../glossary#behavior-driven-specification)
 
 :::
 
@@ -174,6 +174,9 @@ Robot Framework offers a convenient feature for this approach through **Test Tem
 - **Scalability**: Suitable for scenarios where the same functionality needs to be tested under various conditions, such as verifying form inputs or performing calculations with different values.
 
 See [3.4 Using Data-Driven Specification](chapter-03/04_datadriven.md) for more details and examples on [Data-Driven Specification](../glossary#data-driven-specification).
+
+
+
 
 
 

@@ -36,7 +36,7 @@ Recall the information that can be found in a keyword documentation.
 
 ::::
 
-The Keyword Documentation is structured so, that it contains first the library or resource documentation, followed by a list of all keywords that are available in that library or resource file.
+The [Keyword](../glossary#keyword) Documentation is structured so, that it contains first the library or resource documentation, followed by a list of all keywords that are available in that library or resource file.
 
 Each library or resource documentation can contain the following information sections for keywords:
 - **Name**: The name of the keyword as it is called.
@@ -115,7 +115,7 @@ Understand the difference between argument kinds.
 Most library keywords can be parameterized with arguments that are passed to the keyword when it is called to customize its behavior.
 The more business oriented keywords are the less arguments they typically have.
 
-Keyword arguments can be grouped into different argument kinds.
+[Keyword](../glossary#keyword) arguments can be grouped into different argument kinds.
 On the one hand you can group them by their definition attributes and on the other hand by their usage kind.
 
 The relevant distinction of usage kinds is between using :term[Positional Arguments]{term="[Positional Argument](../glossary#positional-argument)"}, :term[Named Arguments]{term="[Named Argument](../glossary#named-argument)"}, or :term[Embedded Arguments]{term="[Embedded Argument](../glossary#embedded-argument)"}.
@@ -214,7 +214,7 @@ Recall the concept of keywords with embedded arguments used in [Behavior-Driven 
 Keywords can include arguments embedded directly into their names, a feature primarily used for [Behavior-Driven Development](../glossary#behavior-driven-development) (BDD).
 Embedded arguments are mandatory and must be provided in the exact position defined within the keyword name.
 
-Keyword names include arguments defined using the scalar variable syntax with dollar and curly braces (`${var_name}`).
+[Keyword](../glossary#keyword) names include arguments defined using the scalar variable syntax with dollar and curly braces (`${var_name}`).
 This syntax explicitly defines these as arguments, distinguishing them from the rest of the keyword name.
 
 Example keyword names are:
@@ -305,15 +305,15 @@ Recall what properties "Named-Only Arguments" have and how they are documented.
 
 ::::
 
-All arguments that are defined after a :term[Variable Number of Positional Arguments] (`*varargs`) are :term[Named-Only Arguments]{term="Named-Only Argument"}.
-However it is also possible to create :term[Named-Only Arguments]{term="Named-Only Argument"} without a preceding :term[Variable Number of Positional Arguments].
+All arguments that are defined after a :term[Variable Number of Positional Arguments] (`*varargs`) are :term[Named-Only Arguments]{term="[Named-Only Argument](../glossary#named-only-argument)"}.
+However it is also possible to create :term[Named-Only Arguments]{term="Named-Only [Argument](../glossary#argument)"} without a preceding :term[Variable Number of Positional Arguments].
 
-:term[Named-Only Arguments]{term="Named-Only Argument"} are marked with a "LABEL" sign `🏷` before the argument name in the keyword documentation.
+:term[Named-Only Arguments]{term="[Named-Only Argument](../glossary#named-only-argument)"} are marked with a "LABEL" sign `🏷` before the argument name in the keyword documentation.
 
 Those arguments can not be set positionally. All positional values would be consumed by the :term[Variable Number of Positional Arguments].
 So they must be called by their name followed by an equal sign `=` and the value of the argument.
 
-:term[Named-Only Arguments]{term="Named-Only Argument"} can be mandatory or optional with a default value.
+:term[Named-Only Arguments]{term="Named-Only [Argument](../glossary#argument)"} can be mandatory or optional with a default value.
 
 ### 2.5.2.7 Free Named Arguments
 
@@ -327,7 +327,7 @@ Recall how "Free Named Arguments" are marked in documentation.
 
 ::::
 
-Another special case of :term[Named-Only Arguments]{term="Named-Only Argument"} are :term[Free Named Arguments]{term="Free Named Argument"}.
+Another special case of :term[Named-Only Arguments]{term="[Named-Only Argument](../glossary#named-only-argument)"} are :term[Free Named Arguments]{term="[Free Named Argument](../glossary#free-named-argument)"}.
 These arguments are similar to the :term[Variable Number of Positional Arguments] in that they can collect multiple values.
 However, instead of collecting positional values, they gather all named values that are not explicitly defined as argument names.
 In this case all values given to the keyword as arguments, that do contain an unescaped equal sign (`=`) are considered as named arguments.
@@ -462,6 +462,9 @@ Should Be Equal    ${x}    expected    Custom error message
 Should Be Equal    ${x}    expected    Custom message    values=False
 Should Be Equal    ${x}    expected    ignore_case=True    formatter=repr
 ```
+
+
+
 
 
 

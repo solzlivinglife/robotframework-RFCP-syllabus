@@ -75,7 +75,7 @@ Robot Framework parses files with the extension `.robot` and searches for test c
 
 A parsed file that contains at least one test case or task is called a **Suite File**.
 
-A Suite File **either** contains `*** Test Cases ***` (in Test Suites) **or** `*** Tasks ***` (in [Task](../glossary#task) Suites), but it CANNOT contain both types simultaneously.
+A [Suite](../glossary#suite) File **either** contains `*** Test Cases ***` (in Test Suites) **or** `*** Tasks ***` (in [Task](../glossary#task) Suites), but it CANNOT contain both types simultaneously.
 
 
 
@@ -98,7 +98,7 @@ The format is `*** <Section Name> ***` with three asterisks before and after the
 The following sections are recognized by Robot Framework and are recommended to be used in the order they are listed:
 - `*** Settings ***`
 - `*** Variables ***`
-- `*** Test Cases ***` or `*** Tasks ***` (mandatory in Suite Files)
+- `*** Test Cases ***` or `*** Tasks ***` (mandatory in [Suite](../glossary#suite) Files)
 - `*** Keywords ***`
 - `*** Comments ***`
 
@@ -229,6 +229,9 @@ See [3.3.1 `*** Keywords ***` Section](chapter-03/03_user_keyword.md#331--keywor
 
 This section is used to add comments to the suite file or resource file.
 All content in this section is ignored by Robot Framework and is not executed or parsed.
+
+
+
 
 
 
