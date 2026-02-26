@@ -136,4 +136,3 @@
 | [`LO-5.2.4`](chapter-05/02_control_structures.md#524-for-loops) | K2 | Understand the purpose and basic concept of FOR Loops |
 | [`LO-5.2.5`](chapter-05/02_control_structures.md#525-while-loops) | K2 | Understand the purpose and basic concept of WHILE Loops |
 | [`LO-5.2.6`](chapter-05/02_control_structures.md#526-break-and-continue) | K2 | Understand the purpose and basic concept of the BREAK and CONTINUE statements |
-
