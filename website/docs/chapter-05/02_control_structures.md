@@ -1,7 +1,7 @@
 
 # 5.2 Control Structures
 
-Robot Framework is a Turing-complete language and supports all common control structures, including IF-Statements, FOR-Loops, WHILE-Loops and more.
+[Robot Framework](../glossary#robot-framework) is a Turing-complete language and supports all common control structures, including IF-Statements, FOR-Loops, WHILE-Loops and more.
 While it is not expected that RFCPs can write complex control structures, they should understand their purpose.
 
 In some cases, it is necessary to use control structures to handle different cases, iterate over a list of values, or execute an action until a condition is met.
@@ -19,12 +19,12 @@ Understand the purpose and basic concept of IF-Statements
 
 ::::
 
-The `IF` / `ELSE IF` / `ELSE` syntax in Robot Framework is used to control the flow of test|task execution by allowing certain keywords to run only when specific conditions are met.
-This is achieved by evaluating conditions written as Python expressions, enabling dynamic decision-making within your tests|tasks.
+The `IF` / `ELSE IF` / `ELSE` syntax in Robot Framework is used to control the flow of test|[task](../glossary#task) execution by allowing certain [keywords](../glossary#keyword) to run only when specific conditions are met.
+This is achieved by evaluating conditions written as Python expressions, enabling dynamic decision-making within your tests|[tasks](../glossary#task).
 
 The `IF` statement begins with the `IF` token and ends with an `END`, enclosing the keywords executed when the condition is true.
 An optional `ELSE` or `ELSE IF` can specify alternative actions when the initial condition is false.
-This structure enhances the flexibility and responsiveness of your tests|tasks, allowing them to adapt based on variables and outcomes encountered during execution.
+This structure enhances the flexibility and responsiveness of your tests|tasks, allowing them to adapt based on [variables](../glossary#variable) and outcomes encountered during execution.
 
 
 ### 5.2.1.1 Basic IF Syntax
@@ -46,7 +46,7 @@ Check Status
     END
 ```
 
-It executes the `Log` keyword if `${status}` is the string `SUCCESS`.
+It executes the `Log` [keyword](../glossary#keyword) if `${status}` is the string `SUCCESS`.
 
 ## 5.2.2 IF/ELSE Structure
 
@@ -115,7 +115,7 @@ The other types are `FOR-IN-RANGE`, `FOR-IN-ENUMERATE`, and `FOR-IN-ZIP`, which 
 - `FOR-IN-ENUMERATE` iterates over a list of values and their indexes.
 - `FOR-IN-ZIP` iterates over multiple lists simultaneously.
 
-The `FOR` loop begins with the `FOR` token, followed by a loop variable, the `IN` token, and the iterable variable or list of values.
+The `FOR` loop begins with the `FOR` token, followed by a loop [variable](../glossary#variable), the `IN` token, and the iterable variable or list of values.
 The loop variable takes on each value in the sequence one at a time, executing the enclosed keywords for each value.
 
 
@@ -298,3 +298,4 @@ Get Older Participants
     END
     RETURN    ${older_participants}
 ```
+

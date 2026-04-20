@@ -11,7 +11,7 @@ Understand the basic concept and syntax of Data-Driven Specification
 
 ::::
 
-The **Data-Driven Specification** style in Robot Framework separates test|task logic from data, enabling tests|tasks to be executed with multiple data sets efficiently. This approach involves using a single higher-level keyword to represent the entire workflow, while the test data is defined as rows of input and expected output values.
+The **Data-Driven Specification** style in [Robot Framework](../glossary#robot-framework) separates test|[task](../glossary#task) logic from data, enabling tests|[tasks](../glossary#task) to be executed with multiple data sets efficiently. This approach involves using a single higher-level [keyword](../glossary#keyword) to represent the entire workflow, while the test data is defined as rows of input and expected output values.
 
 ## 3.4.1 Test|Task Templates
 
@@ -33,7 +33,7 @@ Recall the differences between the two different approaches to define Data-Drive
 
 For each test|task, a template keyword can be defined that contains the workflow logic.
 
-At the suite level, the `Test Template` or `Task Template` setting can be used to specify that keyword.
+At the [suite](../glossary#suite) level, the `Test Template` or `Task Template` setting can be used to specify that keyword.
 All tests|tasks in the suite will reuse this keyword for execution with different data sets.
 
 Alternatively, the `[Template]` setting can be used at the test|task level.
@@ -74,7 +74,7 @@ Empty Password                    ${VALID USER}    ${EMPTY}
 
 The advantage of this approach is that each test|task is executed separately with its own name and data set.
 Each test|task appears in the statistics and reports.
-Single tests|tasks can be filtered and re-executed or tagged, like the test case `Empty User Name and Password`.
+Single tests|tasks can be filtered and re-executed or tagged, like the [test case](../glossary#test-case) `Empty User Name and Password`.
 
 It is possible to add header names to the data columns in the line of `*** Test Cases ***` or `*** Tasks ***` to describe the data columns to improve readability.
 
@@ -120,10 +120,11 @@ This approach creates only a single tests|tasks for multiple data rows in the lo
 
 However, this approach has also its drawbacks:
 
-- Test|task setup and teardown are executed only once for all data rows of one test|task.
+- [Test|task setup](../glossary#test-setup) and teardown are executed only once for all data rows of one test|task.
   If there is a setup and teardown needed for each data row, a keyword setup or teardown is needed.
 - The test|task name is not unique for each data row, which can make it harder to understand the failing data row in the logs.
 - Filtering and re-execution of some or single data rows is not possible.
+
 
 
 

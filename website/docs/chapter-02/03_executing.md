@@ -10,12 +10,11 @@ Recall the three components of the Robot Framework CLI.
 
 ::::
 
-Robot Framework comes with three executables when being installed which are designed to be used via the command-line interface (CLI).
+[Robot Framework](../glossary#robot-framework) comes with three executables when being installed which are designed to be used via the command-line interface (CLI).
 
-- `robot` is the main executable that is used to execute suites.
+- `robot` is the main executable that is used to execute [suites](../glossary#suite).
 - `rebot` (not part of this syllabus) is used to post-process execution results and generate reports.
-- `libdoc` (not part of this syllabus) is used to generate keyword documentation for libraries and resource files. See [2.5 Keyword Interface and Documentation](chapter-02/05_keyword_interface.md)
-
+- `libdoc` (not part of this syllabus) is used to generate [keyword](../glossary#keyword) documentation for libraries and [resource files](../glossary#resource-file). See [2.5 Keyword Interface and Documentation](chapter-02/05_keyword_interface.md)
 
 
 ## 2.3.1 `robot` command & help
@@ -30,9 +29,9 @@ Understand how to run the `robot` command and its basic usage.
 
 ::::
 
-The `robot` command is used to run a Robot Framework execution, which will execute suites and their containing tests|tasks.
+The `robot` command is used to run a Robot Framework execution, which will execute suites and their containing tests|[tasks](../glossary#task).
 
-At a basic level, you can run `robot` by providing the path to a suite file or suite directory containing suite files as last argument.
+At a basic level, you can run `robot` by providing the path to a suite file or suite directory containing [suite](../glossary#suite) files as last [argument](../glossary#argument).
 ```plaintext
 robot <path_to_root_suite>
 ```
@@ -43,8 +42,8 @@ In case of the [2.2.5 Example Suite File](chapter-02/02_suitefile_syntax.md#225-
 ```
 
 This command starts the Robot Framework execution by first parsing all files in the given directory tree that have the extension `.robot`,
-then creates an execution model and finally, executes all suites with their test cases from that model.
-During execution, the results of each test case are printed to the console and at the end a summary is printed and reports are generated.
+then creates an execution model and finally, executes all suites with their [test cases](../glossary#test-case) from that model.
+During execution, the results of each [test case](../glossary#test-case) are printed to the console and at the end a summary is printed and reports are generated.
 
 Example Console Output:
 ```plaintext title="Console Output"
@@ -69,7 +68,7 @@ Log:     /path/to/log.html
 Report:  /path/to/report.html
 ```
 
-The `robot` command can optionally be configured with additional options to control the execution behavior, such as setting output formats, specifying specific tests to run, or controlling logging levels and many more. These options are named arguments that are passed to the `robot` command BEFORE the path to the suite file or directory. To learn more about these options, you can use the help of the `robot` command like: `robot --help`.
+The `robot` command can optionally be configured with additional options to control the execution behavior, such as setting output formats, specifying specific tests to run, or controlling logging levels and many more. These options are [named arguments](../glossary#named-argument) that are passed to the `robot` command BEFORE the path to the suite file or directory. To learn more about these options, you can use the help of the `robot` command like: `robot --help`.
 
 
 
@@ -93,8 +92,8 @@ After executing a suite, Robot Framework, by default, generates three output fil
 
 `log.html` and `report.html` are generated based on the information stored in `output.xml`.
 
-A unique feature of Robot Framework is, that it logs each keyword call and its arguments with its log outputs and timestamps, so that it is possible to have a very detailed view of the execution flow and the data that was used during the execution.
-In case of a failure it is possible to see the exact keyword call that failed and the arguments that were used, which can be very helpful for debugging or reporting. Furthermore, you also get all passed keywords and even the non‑executed keywords, allowing you to trace the whole execution flow.
+A unique feature of Robot Framework is, that it logs each keyword call and its [arguments](../glossary#argument) with its log outputs and timestamps, so that it is possible to have a very detailed view of the execution flow and the data that was used during the execution.
+In case of a failure it is possible to see the exact keyword call that failed and the arguments that were used, which can be very helpful for debugging or reporting. Furthermore, you also get all passed keywords and even the non‑executed [keywords](../glossary#keyword), allowing you to trace the whole execution flow.
 
 
 
@@ -112,7 +111,7 @@ Recall the four different status labels used by Robot Framework.
 
 Robot Framework uses different status labels to indicate the result of an execution:
 
-On Suite, Test Case, Task and Keyword Level:
+On Suite, Test Case, [Task](../glossary#task) and Keyword Level:
 - **`PASS`**: Indicates that the item was successfully executed without unexpected errors.
 - **`FAIL`**: Shows that the item encountered an error and did not pass.
 - **`SKIP`**: Indicates that the item was intentionally skipped, either by tagging or during execution, typically because some condition was not met.
@@ -122,9 +121,9 @@ Additional Keyword Status:
 
 `SKIP` is explained in more detail in later chapters.
 
-**Atomic elements** like Library Keywords or Robot Framework language statements do define their own status.
+**Atomic elements** like [Library Keywords](../glossary#library-keyword) or Robot Framework language statements do define their own status.
 
-**Composite elements** like suites (composed of tests|tasks), tests|tasks (composed of keywords) and User Keywords (composed of Library Keywords and Robot Framework statements) do define their status based on the status of their child elements.
+**Composite elements** like suites (composed of tests|tasks), tests|tasks (composed of keywords) and [User Keywords](../glossary#user-keyword) (composed of Library Keywords and Robot Framework statements) do define their status based on the status of their child elements.
 
 
 ### 2.3.3.1 PASS
@@ -144,7 +143,7 @@ This status is used if an element was executed successfully without any errors o
 **Atomic elements** are `PASS` if they were executed successfully without reporting an error by raising an exception.
 
 **Composite elements** are `PASS` if all their executed body elements are pass.
-E.g. in case of User Keywords this means that if all keywords or Robot Framework language statements that were directly called by that User Keyword were `PASS` the User Keyword itself is considered `PASS`.
+E.g. in case of User Keywords this means that if all keywords or Robot Framework language statements that were directly called by that [User Keyword](../glossary#user-keyword) were `PASS` the User Keyword itself is considered `PASS`.
 
 Library Keywords like `Run Keyword And Expect Error`, from BuiltIn Library, do `PASS` if the keyword they are internally calling does raise an error with the expected message or type.
 
@@ -199,3 +198,4 @@ There are basically two kinds of logging information in Robot Framework.
 
 Log messages can be written with different levels of severity (i.e. `INFO`, `DEBUG`, `TRACE`, `WARN` or `ERROR`).
 Which levels are written to the log can be controlled by the log level of an execution. Further information in later chapters.
+

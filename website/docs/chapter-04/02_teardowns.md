@@ -17,14 +17,14 @@ Recall the typical use cases for using Teardowns
 
 ::::
 
-In automation, tests|tasks are typically executed in a linear sequence.
-This linear execution can lead to issues when a preceding test|task fails, potentially affecting subsequent tests|tasks due to an unclean state of the system under test or the automated environment.
-To prevent such issues, Robot Framework provides the **Teardown** functionality, which can be defined at the suite, test|task, or keyword level.
+In automation, tests|[tasks](../glossary#task) are typically executed in a linear sequence.
+This linear execution can lead to issues when a preceding test|[task](../glossary#task) fails, potentially affecting subsequent tests|tasks due to an unclean state of the system under test or the automated environment.
+To prevent such issues, [Robot Framework](../glossary#robot-framework) provides the **Teardown** functionality, which can be defined at the [suite](../glossary#suite), test|task, or [keyword](../glossary#keyword) level.
 
-As mentioned before, a failure resulting in a keyword with the status `FAIL` will cause Robot Framework not to execute all subsequent keywords of the current test|task.
+As mentioned before, a failure resulting in a keyword with the status `FAIL` will cause Robot Framework not to execute all subsequent [keywords](../glossary#keyword) of the current test|task.
 These not-executed keywords will receive the status `NOT RUN`.
 
-A **Teardown** is a single keyword call with potential argument values that is executed after the child suites, test|tasks, and keywords have completed execution, regardless of the outcome, even if previously executed elements have failed.
+A **Teardown** is a single keyword call with potential [argument](../glossary#argument) values that is executed after the child [suites](../glossary#suite), test|tasks, and keywords have completed execution, regardless of the outcome, even if previously executed elements have failed.
 It ensures that necessary cleanup actions are performed, maintaining the integrity of the environment for subsequent executions.
 
 **Typical use cases for Teardowns include:**
@@ -58,7 +58,7 @@ Understand when Suite Teardown is executed and used
 
 A **Suite Teardown** is executed after all tests|tasks and all child suites in a suite have been executed.
 
-The Suite Teardown is executed regardless of the outcome of the tests|tasks within the suite, even if the suite setup fails.
+The [Suite Teardown](../glossary#suite-teardown) is executed regardless of the outcome of the tests|tasks within the suite, even if the [suite setup](../glossary#suite-setup) fails.
 
 **Key characteristics of Suite Teardown:**
 - Suite Teardown is a single keyword call with potential argument values.
@@ -100,7 +100,7 @@ Understand when Test|Task Teardown is executed and used
 
 A **Test|Task Teardown** is executed after a single test|task body has been executed.
 It is used for cleaning up actions specific to that test|task.
-The Test|Task Teardown is executed regardless of the test|task's outcome, even if the test|task's setup fails.
+The [Test|Task Teardown](../glossary#test-teardown) is executed regardless of the test|task's outcome, even if the test|task's setup fails.
 
 In Robot Framework, you can define a default Test|Task Teardown in the `*** Settings ***` section of the suite using the `Test Teardown`|`Task Teardown` setting.
 This default teardown will be applied to all tests|tasks within the suite unless overridden.
@@ -113,7 +113,7 @@ It is recommended to define the local `[Teardown]` setting as the last line of t
 **Key characteristics of Test|Task Teardown:**
 - Test|Task Teardown is a single keyword call with potential argument values.
 - Executed after the test|task has been executed, regardless of its status.
-- Runs even if the Test|Task Setup fails.
+- Runs even if the [Test|Task Setup](../glossary#test-setup) fails.
 - If the Test|Task Teardown fails, the test|task is marked as failed in reports and logs.
 - All keywords within the Test|Task Teardown are executed, even if one of them fails.
 - Can be set globally for all tests|tasks in a suite and overridden locally.
@@ -164,7 +164,7 @@ Recall key characteristics, benefits, and syntax of Keyword Teardown
 
 ::::
 
-A **Keyword Teardown** is executed after a user keyword body has been executed.
+A **Keyword Teardown** is executed after a [user keyword](../glossary#user-keyword) body has been executed.
 It allows for cleanup actions specific to that keyword,
 ensuring that any resources used within the keyword are properly released independently of failed child keyword calls.
 
@@ -178,7 +178,7 @@ For better readability, it should be written as the last line of a keyword.
 
 **Typical use cases:**
 - Closing temporary files or connections opened within the keyword.
-- Resetting variables or states altered during keyword execution.
+- Resetting [variables](../glossary#variable) or states altered during keyword execution.
 - Logging additional information after keyword execution.
 
 Example of defining a Keyword Teardown:
@@ -190,6 +190,7 @@ Process Data
     Process the Data
     [Teardown]    Close Data Connection
 ```
+
 
 
 

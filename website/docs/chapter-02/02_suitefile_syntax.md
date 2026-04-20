@@ -17,7 +17,7 @@ Understand the basic syntax of test cases and tasks.
 
 ::::
 
-Suite files and resource files share the same syntax, however they differ in their capabilities.
+[Suite](../glossary#suite) files and [resource files](../glossary#resource-file) share the same syntax, however they differ in their capabilities.
 Resource files are explained in more detail in [2.4.2 Resource Files](chapter-02/04_keyword_imports.md#242-resource-files) [3.1 Resource File Structure](chapter-03/01_resource_file.md).
 
 
@@ -33,16 +33,16 @@ Understand and apply the mechanics of indentation and separation in Robot Framew
 
 ::::
 
-As mentioned before, Robot Framework uses an indentation-based and space-separated syntax to structure keywords, test cases, and tasks.
+As mentioned before, [Robot Framework](../glossary#robot-framework) uses an indentation-based and space-separated syntax to structure [keywords](../glossary#keyword), [test cases](../glossary#test-case), and [tasks](../glossary#task).
 
-**Two or more spaces** are used to separate or indent statements in Robot Framework files, while a single space is a valid character in tokens (e.g. keyword names, argument values, variables, etc.).
+**Two or more spaces** are used to separate or indent statements in Robot Framework files, while a single space is a valid character in tokens (e.g. [keyword](../glossary#keyword) names, [argument](../glossary#argument) values, [variables](../glossary#variable), etc.).
 The clear recommendation for separators is to use **four spaces** or more to unambiguously make it visible
 to a potential reader where elements are separated or indented.
 
 A statement in Robot Framework is a logical line that contains specific data tokens, which are separated by multiple spaces (separator tokens) and typically end with a line break (end-of-line token).
 To create a statement spanning multiple lines, literal lines can be continued by adding `...` (three dots) and a separator token at the beginning of the next line, maintaining the same indentation level as the line being continued.
 
-**Example 1**: A keyword call is a statement that consists of a keyword name and its arguments, which are separated by two or more spaces from the keyword name and from each other.
+**Example 1**: A keyword call is a statement that consists of a keyword name and its [arguments](../glossary#argument), which are separated by two or more spaces from the keyword name and from each other.
 An optional assignment of the return value can be possible as well.
 The line comments starting with a hash `#` show the tokens in the statement.
 
@@ -75,10 +75,10 @@ Test Case Name
 # SEP |     ASSIGNMENT     | SEP |     KEYWORD     | EOL
 ```
 
-In the example above, the test case `Test Case Name` contains three keyword calls.
+In the example above, the [test case](../glossary#test-case) `Test Case Name` contains three keyword calls.
 The first keyword call `Keyword Call` has two arguments, `argument one` and `argument two`.
 The second keyword call even though it is split over two lines is considered one logical line and identical to the first keyword call.
-The third keyword call is a keyword call that assigns the return value of the keyword `Keyword Getter Call` to the variable `${variable_assignment}`.
+The third keyword call is a keyword call that assigns the return value of the keyword `Keyword Getter Call` to the [variable](../glossary#variable) `${variable_assignment}`.
 
 **Example 2**: In the `*** Settings ***` section, the settings are separated from their values by four or more spaces.
 
@@ -217,7 +217,7 @@ Some examples are:
 - the `#` hash character that is used to start a comment as described above.
 - variables that are started by e.g. `${` (See [3.2 Variables](chapter-03/02_variables.md))
 - multiple spaces that are considered as separators
-- equal sign `=` that is used to assign named arguments to keywords
+- equal sign `=` that is used to assign [named arguments](../glossary#named-argument) to keywords
 
 All those characters or character sequences that are interpreted as control characters can be escaped by a backslash `\`.
 This means that the character following the backslash is interpreted as a normal character and not as a control character.
@@ -252,12 +252,10 @@ Understand the structure of a basic suite file.
 ::::
 
 In the following example, two test cases are defined in a suite file.
-- `Login User With Password`
-- `Denied Login With Wrong Password`
-
+- `Login User With Password`- `Denied Login With Wrong Password`
 Both test the login functionality of a system by calling four keywords in their bodies.
 
-In the `*** Settings ***` section, the suite is documented, and the keywords for connecting to the server, logging in, and verifying the login are imported from a resource file.
+In the `*** Settings ***` section, the suite is documented, and the keywords for connecting to the server, logging in, and verifying the login are imported from a [resource file](../glossary#resource-file).
 The settings of this section are not indented, but their values are separated by four or more spaces.
 
 In the `*** Test Cases ***` section, there are two test cases defined.
@@ -297,6 +295,7 @@ Denied Login With Wrong Password
     Verify Unauthorized Access
     Close Server Connection
 ```
+
 
 
 
