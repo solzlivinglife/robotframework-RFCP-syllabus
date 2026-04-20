@@ -10,20 +10,20 @@ Understand how to call imported keywords and how to structure keyword calls.
 
 ::::
 
-A typical test case or task is a sequence of keyword calls that are executed in a specific order.
-As learned before these keywords need to be imported into the suite or resource file before they can be used.
-When using keywords in a test|task or User Keyword, it is important to indent the keyword calls correctly.
+A typical [test case](../glossary#[test](../glossary#test-case)-case) or [task](../glossary#task) is a sequence of [keyword](../glossary#keyword) calls that are executed in a specific order.
+As learned before these [keywords](../glossary#keyword) need to be imported into the suite or [resource file](../glossary#resource-file) before they can be used.
+When using [keywords](../glossary#keyword) in a [test](../glossary#test-case)|[task](../glossary#task) or [User Keyword](../glossary#user-keyword), it is important to indent the [keyword](../glossary#keyword) calls correctly.
 With the exception of returning values, which are described in Chapter 3,
-the name of the keyword is the first element of the keyword call followed by the arguments that are separated by two or more spaces.
+the name of the keyword is the first element of the [keyword](../glossary#keyword) call followed by the [arguments](../glossary#argument) that are separated by two or more spaces.
 
-The following example shows different ways to call imported keywords in a test case based on the `Should Be Equal` keyword from the BuiltIn library.
+The following example shows different ways to call imported [keywords](../glossary#keyword) in a [test case](../glossary#test-case) based on the `Should Be Equal` keyword from the BuiltIn library.
 
 The keyword name should be written as defined in the keyword documentation and may have single spaces or other special characters in it.
-After the keyword name the arguments are set.
-All arguments are separated by multiple spaces from the keyword name and from each other and can also include single spaces.
-Argument values are stripped from leading and trailing spaces, but spaces within the argument value are preserved.
+After the keyword name the [arguments](../glossary#argument) are set.
+All [arguments](../glossary#argument) are separated by multiple spaces from the keyword name and from each other and can also include single spaces.
+[Argument](../glossary#argument) values are stripped from leading and trailing spaces, but spaces within the [argument](../glossary#argument) value are preserved.
 
-If an argument shall contain more than one consecutive spaces or start or end with spaces, the spaces must be escaped by a backslash `\` to prevent them from being interpreted as a part of a "multi-space-separator".
+If an [argument](../glossary#argument) shall contain more than one consecutive spaces or start or end with spaces, the spaces must be escaped by a backslash `\` to prevent them from being interpreted as a part of a "multi-space-separator".
 
 Example:
 ```robotframework
@@ -76,11 +76,10 @@ Understand the concept of how to set argument values positionally.
 ::::
 
 When calling keywords, arguments can often be set positionally in the order they are defined in the keyword documentation.
-An exception to this are :term[Named-Only Arguments]{term="Named-Only Argument"} and :term[Free Named Arguments]{term="Free Named Argument"} that can only be set by their name.
+An exception to this are :term[Named-Only Arguments]{term="[Named-Only Argument](../glossary#named-only-argument)"} and :term[Free Named Arguments]{term="[Free Named Argument](../glossary#free-named-argument)"} that can only be set by their name.
 
-However, only using positional values can lead to poor readability as you can see in the previous example: `Mixed Positional Arguments`
-Some keywords do not have an obvious order of arguments.
-In these cases, calling keywords with named arguments can lead to better readability and understanding of the keyword call.
+However, only using positional values can lead to poor readability as you can see in the previous example: `Mixed Positional Arguments`Some keywords do not have an obvious order of arguments.
+In these cases, calling keywords with [named arguments](../glossary#named-argument) can lead to better readability and understanding of the keyword call.
 
 Using arguments positionally is very handy for arguments that are obvious and easy to understand.
 In the early login example the following keyword calls exists:
@@ -91,7 +90,7 @@ Login User With Password
 ```
 
 In that case it should be obvious that the first argument is the username and the second argument is the password.
-Also the following keyword call should be easy to understand but could still be more explicit by using named arguments.
+Also the following keyword call should be easy to understand but could still be more explicit by using [named arguments](../glossary#named-argument).
 
 ```robotframework
 *** Test Cases ***
@@ -114,7 +113,7 @@ Run Process With Arguments
     Log    ${ping.stdout}
 ```
 
-In the second test `Run Process With Arguments` the first given value `ping` is assigned to the argument `command` and all following values are collected into the `arguments` argument of the keyword `Run Process` as a list of values.
+In the second [test](../glossary#test-case) `Run Process With Arguments` the first given value `ping` is assigned to the argument `command` and all following values are collected into the `arguments` argument of the keyword `Run Process` as a list of values.
 
 ## 2.6.2 Named Arguments
 
@@ -128,13 +127,13 @@ Understand the concept of named arguments and how to set argument values by thei
 
 ::::
 
-Keyword Calls with non-obvious arguments should use named argument calls if possible.
-Also setting one optional argument but leaving the others at their default value is an indication to use named arguments.
+Keyword Calls with non-obvious arguments should use [named argument](../glossary#named-argument) calls if possible.
+Also setting one [optional argument](../glossary#optional-argument) but leaving the others at their default value is an indication to use [named arguments](../glossary#named-argument).
 
 Named arguments are set by their name followed by an equal sign `=` and the value of the argument.
-All named arguments must be set after the positional arguments are set but can be set in any order.
+All named arguments must be set after the [positional arguments](../glossary#positional-argument) are set but can be set in any order.
 
-Equal signs are valid argument values and could therefore be misinterpreted as named arguments, if the text before the equal sign is an existing argument name or if :term[Free Named Arguments]{term="Free Named Argument"} are available at the called keyword.
+Equal signs are valid argument values and could therefore be misinterpreted as named arguments, if the text before the equal sign is an existing argument name or if :term[Free Named Arguments]{term="[Free Named Argument](../glossary#free-named-argument)"} are available at the called keyword.
 To prevent that, an equal sign in argument values can be escaped by a backslash `\`.
 
 Example of escaping conflicting equal signs:
@@ -161,12 +160,14 @@ Recall how to use embedded arguments.
 
 ::::
 
-Embedded Arguments are mostly used in Behavior-Driven Development (BDD) using Robot Frameworks Behavior-Driven Specification style.
+[Embedded Arguments](../glossary#embedded-argument) are mostly used in [Behavior-Driven Development](../glossary#behavior-driven-development) (BDD) using Robot Frameworks [Behavior-Driven Specification](../glossary#behavior-driven-specification) style.
 
-Embedded Arguments are part of the keyword name as described in [2.5.2.3 Embedded Arguments](chapter-02/05_keyword_interface.md#2523-embedded-arguments).
+[Embedded Arguments](../glossary#embedded-argument) are part of the keyword name as described in [2.5.2.3 Embedded Arguments](chapter-02/05_keyword_interface.md#2523-embedded-arguments).
 
-When calling keywords with embedded arguments, all characters that are at the position where the embedded argument is expected are used as the argument value.
+When calling keywords with [embedded arguments](../glossary#embedded-argument), all characters that are at the position where the [embedded argument](../glossary#embedded-argument) is expected are used as the argument value.
 
 See the example in section [2.5.2.3 Embedded Arguments](chapter-02/05_keyword_interface.md#2523-embedded-arguments).
 
 See also [2.5.2.3 Embedded Arguments](chapter-02/05_keyword_interface.md#2523-embedded-arguments) for more information about how to use embedded arguments.
+
+

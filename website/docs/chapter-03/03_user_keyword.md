@@ -1,30 +1,27 @@
 
 # 3.3 User Keyword Definition & Arguments
 
-User Keywords in Robot Framework allow users to create their own
-keywords by combining existing keywords into reusable higher-level actions.
+[User Keywords](../glossary#user-keyword) in Robot Framework allow users to create their own
+[keywords](../glossary#keyword) by combining existing [keywords](../glossary#keyword) into reusable higher-level actions.
 They help improve readability, maintainability, and modularity in
 automation by abstracting complex sequences into named actions.
-User Keywords are defined syntactically very similarly to tests|tasks
-and are defined in the `*** Keywords ***` section of a suite file or resource file.
+[User Keywords](../glossary#user-keyword) are defined syntactically very similarly to tests|[tasks](../glossary#task)and are defined in the `*** Keywords ***` section of a [suite file](../glossary#suite-file) or [resource file](../glossary#resource-file).
 
 
 
 ## 3.3.1 `*** Keywords ***` Section
 
-The `*** Keywords ***` section of suite and resource files
-is indentation-based similar to the `*** Test Cases ***` section.
-The user keywords defined are unindented, while their body implementation is indented by multiple spaces.
+The `*** Keywords ***` section of suite and [resource files](../glossary#resource-file)is indentation-based similar to the `*** Test Cases ***` section.
+The [user keywords](../glossary#user-keyword) defined are unindented, while their body implementation is indented by multiple spaces.
 
 See these sections for more details about
-[2.2 Basic Suite File Syntax](chapter-02/02_suitefile_syntax.md)
-and [2.6 Writing Test|Task and Calling Keywords](chapter-02/06_writing_test.md).
+[2.2 Basic Suite File Syntax](chapter-02/02_suitefile_syntax.md)and [2.6 Writing Test|Task and Calling Keywords](chapter-02/06_writing_test.md).
 
-This section can be part of suites or resource files.
-While keywords defined in suites can solely be used in the suite they are defined in,
-keywords defined in resource files can be used in any suite that imports these resource files.
+This section can be part of suites or [resource files](../glossary#resource-file).
+While [keywords](../glossary#keyword) defined in suites can solely be used in the suite they are defined in,
+keywords defined in resource files can be used in any suite that imports these [resource files](../glossary#resource-file).
 
-Example definition of a user keyword:
+Example definition of a [user keyword](../glossary#user-keyword):
 
 ```robotframework
 *** Keywords ***
@@ -52,22 +49,22 @@ Recall the rules how keyword names are matched.
 
 ::::
 
-The names of User Keywords should be descriptive and clear, reflecting the purpose of the keyword.
+The names of User Keywords should be descriptive and clear, reflecting the purpose of the [keyword](../glossary#keyword).
 Well-named keywords make tests more readable and easier to understand.
-Robot Framework supports Unicode and allows the use of special characters and even Emojis in keyword names.
+Robot Framework supports Unicode and allows the use of special characters and even Emojis in [keyword](../glossary#keyword) names.
 
-Keyword names are case-insensitive and can include single spaces.
+[Keyword](../glossary#keyword) names are case-insensitive and can include single spaces.
 Also spaces and underscores will be ignored when matching keyword names.
 So the keywords `Login To System`, and `log_into_system` are considered identical.
 
 To identify keywords that shall be executed, Robot Framework uses a matching algorithm that is case-insensitive and ignores spaces and underscores.
-- The prefixes Given, When, Then, And, and But (case-insensitive), which are used in Behavior-Driven Specification style, are removed from the called keyword name to find a match.
-- If no match is found, Robot Framework tries to match the name with keywords that have embedded arguments.
+- The prefixes Given, When, Then, And, and But (case-insensitive), which are used in [Behavior-Driven Specification](../glossary#behavior-driven-specification) style, are removed from the called keyword name to find a match.
+- If no match is found, Robot Framework tries to match the name with keywords that have [embedded arguments](../glossary#embedded-argument).
 - If still no match is found, a full match (including possible Given, When, Then, And and But) is tried.
 
 By default, if not explicitly defined by the library developers, all Library Keywords are named in **Title Case** with capital letters at the beginning of each word, and spaces between words.
 
-Project may choose a different naming convention for User Keywords, but it is recommended to be consistent across the project for User Keyword names.
+Project may choose a different naming convention for User Keywords, but it is recommended to be consistent across the project for [User Keyword](../glossary#user-keyword) names.
 
 They are defined without indentation, and the subsequent lines until the next unindented line are considered the body of the keyword.
 The following topics explain how to structure the body of a keyword.
@@ -86,12 +83,12 @@ Recall all available settings and their purpose for User Keywords
 
 ::::
 
-User keywords can have similar settings as test cases,
+User keywords can have similar settings as [test cases](../glossary#[test](../glossary#test-case)-case),
 and they have the same square bracket syntax separating them from keyword calls.
 All available settings are listed below and explained in this section or in sections linked below.
 
-- `[Documentation]` Used for setting user keyword documentation. (see [3.3.4 User Keyword Documentation](chapter-03/03_user_keyword.md#334-user-keyword-documentation))
-- `[Arguments]` Specifies user keyword arguments to hand over values to the keyword. (see [3.3.5 User Keyword Arguments](chapter-03/03_user_keyword.md#335-user-keyword-arguments))
+- `[Documentation]` Used for setting [user keyword](../glossary#user-keyword) documentation. (see [3.3.4 User Keyword Documentation](chapter-03/03_user_keyword.md#334-user-keyword-documentation))
+- `[Arguments]` Specifies user keyword [arguments](../glossary#argument) to hand over values to the keyword. (see [3.3.5 User Keyword Arguments](chapter-03/03_user_keyword.md#335-user-keyword-arguments))
 - `[Setup]`, `[Teardown]` Specify user keyword setup and teardown. (see [4.2 Teardowns (Suite, Test|Task, Keyword)](chapter-04/02_teardowns.md))
 - `[Tags]` (*) Sets tags for the keyword, which can be used for filtering in documentation and attribution for post-processing results.
 - `[Timeout]` (*) Sets the possible user keyword timeout.
@@ -115,12 +112,12 @@ Recall the significance of the first logical line and in keyword documentation f
 
 Each keyword can have a `[Documentation]` setting to provide a description of the keyword's purpose and usage.
 
-The first logical line, until the first empty row, is used as the *short documentation* of the keyword in the `log.html` test protocol.
+The first logical line, until the first empty row, is used as the *short documentation* of the keyword in the `log.html` [test](../glossary#test-case) protocol.
 
 Proper documentation helps maintain clarity, especially in larger projects.
 It is a good practice to document what the keyword does,
 any important notes regarding its usage,
-and additional information about the arguments it accepts if not self-explanatory.
+and additional information about the [arguments](../glossary#argument) it accepts if not self-explanatory.
 
 User keywords can be documented in the Robot Framework documentation format.
 
@@ -154,14 +151,14 @@ Understand the purpose and syntax of the [Arguments] setting in User Keywords.
 
 ::::
 
-User Keywords can accept arguments, which make them more dynamic and reusable in various contexts.
+User Keywords can accept [arguments](../glossary#argument), which make them more dynamic and reusable in various contexts.
 The `[Arguments]` setting is used to define the arguments a user keyword expects.
 
-See also [2.5.2 Keyword Arguments](chapter-02/05_keyword_interface.md#252-keyword-arguments) for an introduction to argument kinds.
+See also [2.5.2 Keyword Arguments](chapter-02/05_keyword_interface.md#252-keyword-arguments) for an introduction to [argument](../glossary#argument) kinds.
 
-Arguments are defined by `[Arguments]` followed by the argument names separated by multiple spaces in the syntax of scalar variables.
+Arguments are defined by `[Arguments]` followed by the [argument](../glossary#argument) names separated by multiple spaces in the syntax of [scalar variables](../glossary#scalar-variable).
 
-Since Robot Framework 7.3 User Keywords can define argument types like `string`, `number`, etc., as described in the [2.5.2.8 Argument Types](chapter-02/05_keyword_interface.md#2528-argument-types) section.
+Since Robot Framework 7.3 User Keywords can define [argument](../glossary#argument) types like `string`, `number`, etc., as described in the [2.5.2.8 Argument Types](chapter-02/05_keyword_interface.md#2528-argument-types) section.
 
 
 ### 3.3.5.1 Defining Mandatory Arguments
@@ -182,7 +179,7 @@ Define User Keywords with mandatory arguments.
 
 ::::
 
-Arguments defined as scalar variable (`${arg}`) without a default value are mandatory and must be provided when calling the keyword.
+Arguments defined as [scalar variable](../glossary#scalar-variable) (`${arg}`) without a default value are mandatory and must be provided when calling the keyword.
 
 Example that defines a keyword with two arguments:
 ```robotframework
@@ -197,9 +194,9 @@ Verify File Contains
     Should Contain    ${server_log}    ${expected_content}
 ```
 
-All variables defined in the `[Arguments]` are local to the keyword body and do not exist outside of the keyword.
+All [variables](../glossary#variable) defined in the `[Arguments]` are local to the keyword body and do not exist outside of the keyword.
 
-This keyword may be called in a test case like this:
+This keyword may be called in a [test case](../glossary#test-case) like this:
 ```robotframework
 *** Test Cases ***
 Check Server Log
@@ -227,14 +224,14 @@ Define User Keywords with optional arguments.
 
 ::::
 
-Optional arguments are defined by assigning default values to them in the `[Arguments]` setting.
-All optional arguments must be defined after all mandatory arguments.
+[Optional arguments](../glossary#optional-argument) are defined by assigning default values to them in the `[Arguments]` setting.
+All [optional arguments](../glossary#optional-argument) must be defined after all [mandatory arguments](../glossary#mandatory-argument).
 
 Default values are assigned using an equal sign (`=`),
 followed by the default value without any spaces, such as `${ignore_case}=True`,
 which would set the string `True` as default.
 
-The assigned default values can also include previously defined variables,
+The assigned default values can also include previously defined [variables](../glossary#variable),
 such as `${ignore_case}=${True}`, where `${True}` represents the boolean value `True`.
 
 Example:
@@ -276,12 +273,12 @@ Understand the role of embedded arguments in Behavior-Driven Development (BDD) s
 In Robot Framework, **embedded arguments** allow the inclusion
 of arguments directly within the keyword name itself.
 This approach is particularly useful for creating
-**Behavior-Driven Development (BDD)**-style test cases or for
+**Behavior-Driven Development (BDD)**-style [test cases](../glossary#test-case) or for
 making keyword names more readable and meaningful.
 
-With embedded arguments, placeholders are used within the keyword name,
+With [embedded arguments](../glossary#embedded-argument), placeholders are used within the keyword name,
 which are replaced by actual values when the keyword is executed.
-These arguments are written as scalar variables with dollar signs and curly braces,
+These arguments are written as [scalar variables](../glossary#scalar-variable) with dollar signs and curly braces,
 as shown in the following example:
 
 ```robotframework
@@ -291,11 +288,9 @@ The file '${file_name}' should contain '${expected_content}'
     Should Contain    ${file_content}    ${expected_content}
 ```
 
-When this keyword is called, the placeholders `${file_name}`
-and `${expected_content}` are replaced by the actual values provided in the keyword call.
+When this keyword is called, the placeholders `${file_name}`and `${expected_content}` are replaced by the actual values provided in the keyword call.
 For instance, in the following example,
-`${file_name}` is replaced with `server.log`
-and `${expected_content}` with `Successfully started`:
+`${file_name}` is replaced with `server.log`and `${expected_content}` with `Successfully started`:
 
 ```robotframework
 *** Test Cases ***
@@ -305,7 +300,7 @@ Test File Content
     Then the file 'server.log' should contain 'Successfully started'
 ```
 
-Quotes around the embedded arguments are treated as regular characters
+Quotes around the [embedded arguments](../glossary#embedded-argument) are treated as regular characters
 within the keyword name but can improve readability
 and help distinguish embedded arguments from the rest of the keyword name.
 
@@ -350,7 +345,7 @@ the user ${action}
 
 ### 3.3.5.4 Other Argument Kinds
 
-Other argument kinds like :term[Named-Only Arguments]{term="Named-Only Argument"}, :term[Free Named Arguments]{term="Free Named Argument"}, or
+Other argument kinds like :term[Named-Only Arguments]{term="[Named-Only Argument](../glossary#named-only-argument)"}, :term[Free Named Arguments]{term="[Free Named Argument](../glossary#free-named-argument)"}, or
 :term[Variable Number of Positional Arguments] should be known,
 but their definition and usage are not part of this syllabus.
 
@@ -375,12 +370,12 @@ Use the `RETURN` statement to return values from a user keyword and assign it to
 ::::
 
 The `RETURN` statement (case-sensitive) in Robot Framework is used to return values from a User Keyword
-to be used in further test steps or stored in variables.
+to be used in further [test](../glossary#test-case) steps or stored in [variables](../glossary#variable).
 This allows test execution to pass data between different keywords.
 
 It can return one or more values.
 If more than one value is returned, they can either be assigned
-to multiple variables or stored as a list in a single variable.
+to multiple variables or stored as a list in a single [variable](../glossary#variable).
 
 Example:
 ```robotframework
@@ -399,7 +394,7 @@ However, this behavior can be used to conditionally end a keyword execution earl
 :::tip[Important]
 
 The `RETURN` statement of a keyword cannot return the returned value from a called keyword directly like in other programming languages.
-The return value must be stored in a variable first and then be returned by the `RETURN` statement.
+The return value must be stored in a [variable](../glossary#variable) first and then be returned by the `RETURN` statement.
 So the first keyword is **invalid** while the second is **valid**!
 
 ```robot title="invalid"
@@ -447,6 +442,9 @@ Keyword Conventions should contain agreements on:
 - **Word/Character Count**: How many words or characters shall be used in a keyword name? (e.g. less than 7 words)
 - **Argument Count**: How many arguments shall a keyword have? (e.g. less than 5)
 - **Documentation**: How shall the documentation be structured and which information shall be included or is it required at all?
+
+
+
 
 
 

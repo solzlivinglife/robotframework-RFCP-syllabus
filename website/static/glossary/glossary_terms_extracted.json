@@ -1,0 +1,318 @@
+[
+  {
+    "term": "Acceptance Testing",
+    "abbreviation": null
+  },
+  {
+    "term": "Adaptation Layer",
+    "abbreviation": null
+  },
+  {
+    "term": "Atomic Element",
+    "abbreviation": null
+  },
+  {
+    "term": "Automation Script",
+    "abbreviation": null
+  },
+  {
+    "term": "Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "Argument Interface",
+    "abbreviation": null
+  },
+  {
+    "term": "Behavior-Driven Development",
+    "abbreviation": "BDD"
+  },
+  {
+    "term": "Behavior-Driven Specification",
+    "abbreviation": null
+  },
+  {
+    "term": "Built-In Variables",
+    "abbreviation": null
+  },
+  {
+    "term": "Command Line Interface",
+    "abbreviation": "CLI"
+  },
+  {
+    "term": "Composite Element",
+    "abbreviation": null
+  },
+  {
+    "term": "Control Structure",
+    "abbreviation": null
+  },
+  {
+    "term": "Data-Driven Specification",
+    "abbreviation": null
+  },
+  {
+    "term": "Definition Layer",
+    "abbreviation": null
+  },
+  {
+    "term": "Embedded Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "End-to-End Test",
+    "abbreviation": null
+  },
+  {
+    "term": "Execution Artifacts",
+    "abbreviation": null
+  },
+  {
+    "term": "Execution Layer",
+    "abbreviation": null
+  },
+  {
+    "term": "Execution Model",
+    "abbreviation": null
+  },
+  {
+    "term": "Fail Status",
+    "abbreviation": null
+  },
+  {
+    "term": "FOR Loop",
+    "abbreviation": null
+  },
+  {
+    "term": "Free Named Argument",
+    "abbreviation": "kwargs"
+  },
+  {
+    "term": "Generic Test Automation Architecture",
+    "abbreviation": "gTAA"
+  },
+  {
+    "term": "Given / When / Then / And / But",
+    "abbreviation": null
+  },
+  {
+    "term": "Global Variable",
+    "abbreviation": null
+  },
+  {
+    "term": "Higher-Level Suite (Suite Directory)",
+    "abbreviation": null
+  },
+  {
+    "term": "Initialization File (__init__.robot)",
+    "abbreviation": null
+  },
+  {
+    "term": "Inline Comment",
+    "abbreviation": null
+  },
+  {
+    "term": "Inline IF",
+    "abbreviation": null
+  },
+  {
+    "term": "K-Level (Knowledge Level)",
+    "abbreviation": null
+  },
+  {
+    "term": "Keyword",
+    "abbreviation": null
+  },
+  {
+    "term": "Keyword Interface",
+    "abbreviation": null
+  },
+  {
+    "term": "Keyword-Driven Specification",
+    "abbreviation": null
+  },
+  {
+    "term": "Keyword Library",
+    "abbreviation": null
+  },
+  {
+    "term": "List Variable",
+    "abbreviation": null
+  },
+  {
+    "term": "Local Variable",
+    "abbreviation": null
+  },
+  {
+    "term": "Log File (log.html)",
+    "abbreviation": null
+  },
+  {
+    "term": "Mandatory Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "Metadata (Suite Metadata)",
+    "abbreviation": null
+  },
+  {
+    "term": "Named-Only Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "Named Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "Output File (output.xml)",
+    "abbreviation": null
+  },
+  {
+    "term": "Optional Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "Pass Status",
+    "abbreviation": null
+  },
+  {
+    "term": "Positional Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "Positional or Named Argument",
+    "abbreviation": null
+  },
+  {
+    "term": "Report File (report.html)",
+    "abbreviation": null
+  },
+  {
+    "term": "Resource File",
+    "abbreviation": null
+  },
+  {
+    "term": "Return Statement (RETURN)",
+    "abbreviation": null
+  },
+  {
+    "term": "Return Type Hint",
+    "abbreviation": null
+  },
+  {
+    "term": "Robotic Process Automation",
+    "abbreviation": "RPA"
+  },
+  {
+    "term": "Robot Framework Foundation",
+    "abbreviation": null
+  },
+  {
+    "term": "Robot Framework® Certified Professional",
+    "abbreviation": "RFCP"
+  },
+  {
+    "term": "Root Suite",
+    "abbreviation": null
+  },
+  {
+    "term": "Scalar Access Syntax (${})",
+    "abbreviation": null
+  },
+  {
+    "term": "Scalar Variable",
+    "abbreviation": null
+  },
+  {
+    "term": "Skip Status",
+    "abbreviation": null
+  },
+  {
+    "term": "Standard Library (Robot Framework)",
+    "abbreviation": null
+  },
+  {
+    "term": "Suite (Test Suite / Task Suite)",
+    "abbreviation": null
+  },
+  {
+    "term": "Suite File",
+    "abbreviation": null
+  },
+  {
+    "term": "Suite Setup",
+    "abbreviation": null
+  },
+  {
+    "term": "Suite Teardown",
+    "abbreviation": null
+  },
+  {
+    "term": "Suite Variable",
+    "abbreviation": null
+  },
+  {
+    "term": "Synthetic Monitoring",
+    "abbreviation": null
+  },
+  {
+    "term": "Task",
+    "abbreviation": null
+  },
+  {
+    "term": "Test Setup",
+    "abbreviation": null
+  },
+  {
+    "term": "Test Teardown",
+    "abbreviation": null
+  },
+  {
+    "term": "Test Template",
+    "abbreviation": null
+  },
+  {
+    "term": "Test Case",
+    "abbreviation": "Test"
+  },
+  {
+    "term": "Test Data",
+    "abbreviation": null
+  },
+  {
+    "term": "Test Level",
+    "abbreviation": null
+  },
+  {
+    "term": "Test Tag",
+    "abbreviation": null
+  },
+  {
+    "term": "Test Timeout",
+    "abbreviation": null
+  },
+  {
+    "term": "User Keyword",
+    "abbreviation": null
+  },
+  {
+    "term": "Variable Number of Positional Arguments",
+    "abbreviation": null
+  },
+  {
+    "term": "Variable",
+    "abbreviation": null
+  },
+  {
+    "term": "Variable File",
+    "abbreviation": null
+  },
+  {
+    "term": "Variable Scope",
+    "abbreviation": null
+  },
+  {
+    "term": "WHILE Loop",
+    "abbreviation": null
+  }
+]

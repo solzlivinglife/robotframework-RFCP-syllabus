@@ -19,17 +19,17 @@ Recall the relevant five different ways to create and assign variables
 ::::
 
 
-Variables in Robot Framework are used to store values that can be referenced and reused throughout suites, test cases, tasks, and keywords.
+[Variables](../glossary#variable) in Robot Framework are used to store values that can be referenced and reused throughout suites, [test cases](../glossary#[test](../glossary#test-case)-case), [tasks](../glossary#task), and [keywords](../glossary#keyword).
 They help manage dynamic data or centrally maintained data, reducing hardcoding in multiple locations and making automation flexible.
 
-Variables can be created and assigned in various ways, such as:
-- Definition in the `*** Variables ***` section in suites or resource files. (see [3.2.2 `*** Variables ***` Section](chapter-03/02_variables.md#322--variables--section))
-- Capturing return values from keywords. (see [3.2.3 Return values from Keywords](chapter-03/02_variables.md#323-return-values-from-keywords))
+[Variables](../glossary#variable) can be created and assigned in various ways, such as:
+- Definition in the `*** Variables ***` section in suites or [resource files](../glossary#resource-file). (see [3.2.2 `*** Variables ***` Section](chapter-03/02_variables.md#322--variables--section))
+- Capturing return values from [keywords](../glossary#keyword). (see [3.2.3 Return values from Keywords](chapter-03/02_variables.md#323-return-values-from-keywords))
 - Inline assignment using the `VAR` statement. (see [3.2.4 `VAR` Statement](chapter-03/02_variables.md#324-var-statement))
-- As arguments passed to keywords. (see [3.3.5 User Keyword Arguments](chapter-03/03_user_keyword.md#335-user-keyword-arguments))
-- By the command line interface of Robot Framework. (See [5.1.3 Global Variables via Command Line](chapter-05/01_advanced_variables.md#513-global-variables-via-command-line))
+- As [arguments](../glossary#argument) passed to [keywords](../glossary#keyword). (see [3.3.5 User Keyword Arguments](chapter-03/03_user_keyword.md#335-user-keyword-arguments))
+- By the [command line interface](../glossary#command-line-interface) of Robot Framework. (See [5.1.3 Global Variables via Command Line](chapter-05/01_advanced_variables.md#513-global-variables-via-command-line))
 - (*) By internal implementation of library keywords.
-- (*) By importing variables from variable files.
+- (*) By importing [variables](../glossary#variable) from [variable files](../glossary#[variable](../glossary#variable)-file).
 
 (*) These methods are not part of this syllabus.
 
@@ -56,8 +56,8 @@ Recall the basic syntax of variables
 ::::
 
 Variables in Robot Framework are defined by three attributes:
-- **Prefix**: `$`, `@`, or `&` to define the access type to the variable. (`%` for environment variables)
-- **Delimiter**: `{}` to enclose the variable name.
+- **Prefix**: `$`, `@`, or `&` to define the access type to the [variable](../glossary#variable). (`%` for environment variables)
+- **Delimiter**: `{}` to enclose the [variable](../glossary#variable) name.
 - **Variable Name**: The string that addresses the variable. i.e. just the `variable_name` or more advanced access ways.
 
 Variable names are case-insensitive and as keywords, containing single spaces and underscores are ignored when matching variable names.
@@ -76,7 +76,7 @@ These different syntactical handling methods allow the users to also create and 
 However, these prefixes just define the access type to the variable, and the actual data stored in the variable can be of any type, including strings, numbers, lists, dictionaries, or even objects.
 
 When creating variables, different syntax is used to define the type of the variable as described in the next sections,
-but when accessing the variable, the scalar variable syntax with a dollar sign `$` as the prefix is used in most cases.
+but when accessing the variable, the [scalar variable](../glossary#scalar-variable) syntax with a dollar sign `$` as the prefix is used in most cases.
 More details about list-like and dictionary-like variables,
 and when to use `@` or `&` when accessing these variables,
 can be found in the [5.1 Advanced Variables](chapter-05/01_advanced_variables.md) chapter.
@@ -101,12 +101,12 @@ Use the correct variable prefixes for assigning and accessing variables
 
 ::::
 
-Variables can be defined in the `*** Variables ***` section within both suite files and resource files.
+Variables can be defined in the `*** Variables ***` section within both [suite files](../glossary#suite-file) and [resource files](../glossary#resource-file).
 
-- Variables defined in a **suite file** are accessible throughout that specific suite, enabling consistent use across all test|tasks, and keywords executed within that suite.
-- Variables defined in a **resource file**, however, are accessible in all files that import the resource file directly or indirectly by imports of other resource files. This allows for the sharing of variables across multiple suites or files while maintaining modularity and reusability.
+- Variables defined in a **suite file** are accessible throughout that specific suite, enabling consistent use across all [test](../glossary#test-case)|[tasks](../glossary#task), and keywords executed within that suite.
+- Variables defined in a **resource file**, however, are accessible in all files that import the [resource file](../glossary#resource-file) directly or indirectly by imports of other [resource files](../glossary#resource-file). This allows for the sharing of variables across multiple suites or files while maintaining modularity and reusability.
 
-This section is evaluated before any other section in a resource or suite file,
+This section is evaluated before any other section in a resource or [suite file](../glossary#suite-file),
 and therefore variables defined here can be used in any other section of the file.
 
 This section is typically used to define constants or to initialize variables that may be re-assigned during execution and more globally used.
@@ -120,12 +120,12 @@ Variables created in this section:
 - have a **suite scope** in the suite created or imported to.
 
 Because two or more spaces are used to separate elements in a row,
-all values are stripped of leading and trailing spaces, identical to arguments of keyword calls (see [2.2.4 Escaping of Control Characters](chapter-02/02_suitefile_syntax.md#224-escaping-of-control-characters) to be able to define these spaces.
+all values are stripped of leading and trailing spaces, identical to [arguments](../glossary#argument) of [keyword](../glossary#keyword) calls (see [2.2.4 Escaping of Control Characters](chapter-02/02_suitefile_syntax.md#224-escaping-of-control-characters) to be able to define these spaces.
 
 Variable values in Robot Framework can include other variables, and their values will be concatenated at runtime when the line is executed.
 This means that when a variable is used within another variable's value, the final value is resolved by replacing the variables with their actual content during execution.
 
-Variables defined in the `*** Variables ***` section are recommended to be named in uppercase to distinguish them from local variables defined in test cases or keywords.
+Variables defined in the `*** Variables ***` section are recommended to be named in uppercase to distinguish them from [local variables](../glossary#local-variable) defined in [test cases](../glossary#test-case) or keywords.
 
 
 ### 3.2.2.1 Scalar Variable Definition
@@ -146,7 +146,7 @@ Understand how multiple lines can be used to define scalar variables
 
 ::::
 
-Example of creating scalar variables:
+Example of creating [scalar variables](../glossary#scalar-variable):
 ```robotframework
 *** Variables ***
 ${NAME}       Robot Framework
@@ -156,7 +156,7 @@ ${TOOL}       ${NAME}, version: ${VERSION}
 
 The variable `${TOOL}` will be resolved to `Robot Framework, version: 8.0` at runtime.
 
-If the value of a scalar variable is long, you can split it into multiple lines for better readability using the `...` syntax. By default, multiple values are concatenated with a space.
+If the value of a [scalar variable](../glossary#scalar-variable) is long, you can split it into multiple lines for better readability using the `...` syntax. By default, multiple values are concatenated with a space.
 
 You can also define a custom separator by specifying the last value as a lowercase `separator=` followed by the desired separator value (e.g., newline: `separator=\n`). Alternatively, you can use no separator at all by specifying `separator=` to join the values into a single string.
 
@@ -181,10 +181,7 @@ ${SEARCH_URL}     https://example.com/search
 ```
 
 `${SEARCH_URL}` will contain the following without any spaces or newlines:
-`https://example.com/search?query=robot+framework&page=1&filter=recent&lang=en&category=test-automation`
-
-
-### 3.2.2.2 Primitive Data Types
+`https://example.com/search?query=robot+framework&page=1&filter=recent&lang=en&category=test-automation`### 3.2.2.2 Primitive Data Types
 
 ::::lo[Learning Objectives]
 
@@ -206,7 +203,7 @@ These are:
 - **None**: a special value representing the absence of a value written as `${None}`.
 
 Except for Strings, which are defined without any quotation or enclosure,
-the other primitive data types are defined by using the scalar variable syntax `${variable_value}`.
+the other primitive data types are defined by using the [scalar variable](../glossary#scalar-variable) syntax `${variable_value}`.
 
 These values are case-insensitive and can be used in any context where a variable is accepted.
 
@@ -240,7 +237,7 @@ Understand how to set and access data in list variables
 
 ::::
 
-List variables store multiple values and are defined using the at-syntax `@{variable_name}`.
+[List variables](../glossary#list-variable) store multiple values and are defined using the at-syntax `@{variable_name}`.
 You can define as many values as needed, with each additional value
 separated by multiple spaces or line continuation using the `...` syntax.
 
@@ -321,14 +318,14 @@ In Robot Framework, values returned by keywords can be assigned to variables,
 enabling data to be passed between different keywords.
 
 These variables have a **local scope** in the block where they are created,
-i.e., in the test|task or keyword where the assignment is made.
+i.e., in the [test](../glossary#test-case)|[task](../glossary#task) or [keyword](../glossary#keyword) where the assignment is made.
 If a variable has already been defined in the `*** Variables ***` section and therefore has a **suite scope**,
 it will just be locally overwritten/masked by the new variable with the same name.
 Once the block is left, the original variable with its original value is accessible again.
 See [5.1.2 Variable Scopes](chapter-05/01_advanced_variables.md#512-variable-scopes) for more information.
 
 An assignment is always constructed by the variable or variables that shall be assigned to,
-followed by an optional equal sign (`=`) and the keyword call that
+followed by an optional equal sign (`=`) and the [keyword](../glossary#keyword) call that
 shall be executed and will return the value(s) to be assigned.
 
 
@@ -366,7 +363,7 @@ Returning a List Example
     Log    Last File: ${files}[-1]
 ```
 
-In cases where a keyword returns a defined number of values, they can be assigned to multiple scalar variables in one assignment.
+In cases where a keyword returns a defined number of values, they can be assigned to multiple [scalar variables](../glossary#scalar-variable) in one assignment.
 In the following example, the keyword `Split Path` returns two values, the path and the file name.
 
 ```robotframework
@@ -396,14 +393,14 @@ Understand how to create variables using the VAR statement
 ::::
 
 The `VAR` statement in Robot Framework is a way to create
-and assign values to variables directly within a test|task or keyword during execution.
+and assign values to variables directly within a test|[task](../glossary#task) or keyword during execution.
 While the `*** Variables ***` section allows defining variables for a whole suite,
-the `VAR` statement is used within the body of a test|task or keyword,
+the `VAR` statement is used within the body of a test|[task](../glossary#task) or keyword,
 allowing more control over when and where the variable is created.
 
 The `VAR` statement is case-sensitive and is followed by the variable name and an optional equal sign (`=`) and the value(s) to be assigned.
 The syntax is very similar to the `*** Variables ***` section.
-Scalar variables, lists, and dictionaries are created the same way and multiple values can also be assigned in multiple lines using the `...` syntax.
+[Scalar variables](../glossary#scalar-variable), lists, and dictionaries are created the same way and multiple values can also be assigned in multiple lines using the `...` syntax.
 Strings can be concatenated with the `separator=` syntax as well.
 
 Example:
@@ -434,7 +431,7 @@ Example use cases for the `VAR` statement:
 By default, variables created with the `VAR` statement have a **local scope** in the test|task, or keyword where they are defined.
 This means that they cannot be accessed outside that specific test|task or keyword, ensuring that variables do not interfere with other parts of the test|task suite.
 
-However, the `VAR` statement can also be used to create variables with a broader scope, using `scope=`, such as suite-wide or global variables, when needed.
+However, the `VAR` statement can also be used to create variables with a broader scope, using `scope=`, such as suite-wide or [global variables](../glossary#global-variable), when needed.
 These variables can then be accessed outside of the test|task or keyword where they were originally created.
 
 For more details on this topic, refer to the section on [5.1.2 Variable Scopes](chapter-05/01_advanced_variables.md#512-variable-scopes).
@@ -455,15 +452,18 @@ Understand how `local` and `suite` scope variables are created
 
 In Robot Framework, variables have different scopes, which define where they can be accessed and used. Understanding the scope of variables is crucial for managing data within tests and keywords.
 
-- **`LOCAL` Scope**: Variables created within a test|task or keyword, by **assignment of return values**, as keyword arguments or **`VAR`** statement, are by default `LOCAL` to that specific test|task or keyword body.
+- **`LOCAL` Scope**: Variables created within a test|task or keyword, by **assignment of return values**, as keyword [arguments](../glossary#argument) or **`VAR`** statement, are by default `LOCAL` to that specific test|task or keyword body.
 
-  They cannot be accessed outside of that block and are destroyed once the block is completed. This means that a local variable created in one test|task can neither be accessed inside the body of a called keyword nor in a subsequent test|task or other keywords.
+  They cannot be accessed outside of that block and are destroyed once the block is completed. This means that a [local variable](../glossary#local-variable) created in one test|task can neither be accessed inside the body of a called keyword nor in a subsequent test|task or other keywords.
 
-- **`SUITE` Scope**: Variables defined at the suite level, for example in the `*** Variables ***` section or through importing resource files, are available to all tests|tasks and keywords called within the suite.
+- **`SUITE` Scope**: Variables defined at the suite level, for example in the `*** Variables ***` section or through importing resource files, are available to all tests|[tasks](../glossary#task) and keywords called within the suite.
 
-  That means that they can be accessed inside a keyword, called from a test|task of that suite even, if this variable is not created as part of the argument interface of that keyword.
+  That means that they can be accessed inside a keyword, called from a test|task of that suite even, if this variable is not created as part of the [argument interface](../glossary#[argument](../glossary#argument)-interface) of that keyword.
 
-Examples and more details on variable scope, such as `TEST` and `GLOBAL` scope can be found in the [5.1.2 Variable Scopes](chapter-05/01_advanced_variables.md#512-variable-scopes) section.
+Examples and more details on [variable scope](../glossary#variable-scope), such as `TEST` and `GLOBAL` scope can be found in the [5.1.2 Variable Scopes](chapter-05/01_advanced_variables.md#512-variable-scopes) section.
+
+
+
 
 
 

@@ -19,12 +19,12 @@ Key attributes of the syntax that improves the before mentioned:
 
 - **Space-separated syntax**: Robot Framework uses two or more spaces as the primary separator (although one space is allowed as a character).
   A use of **FOUR (4)** spaces is recommended to ensure clarity and readability of the specification.
-- **Indentation based blocks**: Code blocks like test, task or keyword bodies are defined by indentation.
+- **Indentation based blocks**: Code blocks like [test](../glossary#test-case), [task](../glossary#task) or [keyword](../glossary#keyword) bodies are defined by indentation.
   This makes the structure clear and easy to follow.
 - **Reduced use of special characters**: Compared to programming languages the focus is on reducing special characters, making the syntax human-readable and user-friendly.
-- **String first**: Unquoted strings are considered as strings, while variables need special syntax.
+- **String first**: Unquoted strings are considered as strings, while [variables](../glossary#variable) need special syntax.
 - **Single spaces are valid**: Single spaces are valid as a character in most elements and values without quotation.
-- **Mostly case-insensitive**: Most elements like keyword or variable names are case insensitive.
+- **Mostly case-insensitive**: Most elements like [keyword](../glossary#keyword) or [variable](../glossary#variable) names are case insensitive.
 However, some syntax, like library imports is case-sensitive.
 
 :::tip[Note]
@@ -33,7 +33,7 @@ This syllabus does NOT cover other formats like Pipe-Separated ( | ) Format or R
 
 :::
 
-Example of test cases with their keyword calls written in Robot Framework:
+Example of [test cases](../glossary#test-case) with their [keyword](../glossary#keyword) calls written in Robot Framework:
 
 ```robotframework
 *** Settings ***
@@ -69,19 +69,19 @@ Create User With Admin Rights
 ## 1.3.1 What are Test Cases / Tasks?
 
 In Robot Framework, **Test Cases** (**Tests**) or **Tasks** are executable entities that serve a specific purpose and are organized into suites.
-A **Test** is synonymous with a **Test Case**, while **Task**, technically being the same, is used in RPA mode, where the automation is not focused on testing but on automating business processes.
+A **Test** is synonymous with a **Test Case**, while **Task**, technically being the same, is used in [RPA](../glossary#robotic-process-automation) mode, where the automation is not focused on testing but on automating business processes.
 
-Tests or Tasks have a body made up of **keyword calls** and Robot Framework statements like **IF** or **VAR**, which represent the actions or steps executed during the test or task execution.
-These keywords make the automation modular, maintainable, reusable, and readable.
+Tests or [Tasks](../glossary#task) have a body made up of **keyword calls** and Robot Framework statements like **IF** or **VAR**, which represent the actions or steps executed during the [test](../glossary#test-case) or [task](../glossary#task) execution.
+These [keywords](../glossary#keyword) make the automation modular, maintainable, reusable, and readable.
 
 
 
 ## 1.3.2 Files & Directories
 
-Robot Framework organizes tests|tasks into **Suites**, which are either files or directories.
+Robot Framework organizes tests|[tasks](../glossary#task) into **Suites**, which are either files or directories.
 
-- `*.robot` files that contain test cases or tasks are suites.
-- Each directory, starting from the top-level directory (the one executed by Robot Framework), and any sub-directory that contains a `*.robot` suite file, is considered a **Suite** as well.
+- `*.robot` files that contain [test cases](../glossary#test-case) or [tasks](../glossary#task) are suites.
+- Each directory, starting from the top-level directory (the one executed by Robot Framework), and any sub-directory that contains a `*.robot` [suite file](../glossary#suite-file), is considered a **Suite** as well.
 Suites can contain other suites, forming a hierarchical tree, which is by default alphabetically ordered.
 See [2.1 Suite File & Tree Structure](chapter-02/01_suitefile.md) for more details.
 
@@ -104,14 +104,14 @@ Explain the difference between User Keywords and Library Keywords
 
 Tests or Tasks are constructed using **Keywords**, which represent specific actions or sequences of actions to be performed.
 
-**Keywords** in Robot Framework follow the concepts used in Behavior-Driven Development (BDD) and Keyword-Driven Testing.
+**Keywords** in Robot Framework follow the concepts used in [Behavior-Driven Development](../glossary#behavior-driven-development) (BDD) and Keyword-Driven Testing.
 
 **Definition**: one or more words used as a reference to a specific set of actions intended to be performed during the execution of one or more tests or tasks.
 
-There are two types of keywords in Robot Framework:
+There are two types of [keywords](../glossary#keyword) in Robot Framework:
 
 
-1. **User Keywords**: Written in Robot Framework syntax, they are mainly used as wrappers around sets of other keywords or to implement actions not readily available in existing library keywords. User Keywords improve readability, understandability, maintainability, and structure. These keywords always call other keywords or commands within their body, which is why they are also called **higher-level keywords**. In other literature, such keywords are also referred to as **Business Keywords** or **Composite Keywords**.<br/><br/>
+1. **User Keywords**: Written in Robot Framework syntax, they are mainly used as wrappers around sets of other keywords or to implement actions not readily available in existing library [keywords](../glossary#keyword). [User Keywords](../glossary#user-keyword) improve readability, understandability, maintainability, and structure. These keywords always call other keywords or commands within their body, which is why they are also called **higher-level keywords**. In other literature, such keywords are also referred to as **Business Keywords** or **Composite Keywords**.<br/><br/>
 Example:
 ```robot
 *** Keywords ***
@@ -122,13 +122,13 @@ Login User
     Execute Login
 ```
 
-2. **Library Keywords**: Typically written in Python, but they may also be implemented using other technologies. These keywords typically interact with the system under test (SUT) or the system to be controlled by RPA, or execute specific actions such as calculations or conversions. From the viewpoint of Robot Framework, such keywords are not composed of other keywords and do form the lowest level of keywords. Therefore, they are also referred to as **low-level keywords**. In other literature, such keywords are also called **Technical Keywords** or **Atomic Keywords**.
+2. **Library Keywords**: Typically written in Python, but they may also be implemented using other technologies. These keywords typically interact with the system under [test](../glossary#test-case) (SUT) or the system to be controlled by [RPA](../glossary#robotic-process-automation), or execute specific actions such as calculations or conversions. From the viewpoint of Robot Framework, such keywords are not composed of other keywords and do form the lowest level of keywords. Therefore, they are also referred to as **low-level keywords**. In other literature, such keywords are also called **Technical Keywords** or **Atomic Keywords**.
 
-A **User Keyword** consists of a **name**, optional **arguments**, and a **body** of keyword calls that may invoke other user keywords, library keywords, or other statements such as variable definitions or flow control.
+A **User Keyword** consists of a **name**, optional **arguments**, and a **body** of keyword calls that may invoke other [user keywords](../glossary#user-keyword), library keywords, or other statements such as [variable](../glossary#variable) definitions or flow control.
 
 
 During execution, each keyword call is logged, providing fine-grained detail in the execution logs.
-This includes all levels of keywords—from those called directly by a test or task to those nested within user keywords, all the way down to the execution of library keywords.
+This includes all levels of keywords—from those called directly by a test or [task](../glossary#task) to those nested within [user keywords](../glossary#user-keyword), all the way down to the execution of library keywords.
 This granular logging and detailed execution documentation is one of the key advantages of Robot Framework compared to other automation tools.
 
 
@@ -147,12 +147,15 @@ Recall the difference between Resource Files and Libraries and their artifacts
 
 While tests and tasks are organized into suites, **keywords** are organized into **Resource Files** and **Keyword Libraries**.
 
-- **Resource Files**: Contain **User Keywords** and are also used to organize the importing of libraries and the definition of variables. These are considered to be part of the test|task data in the *Definition Layer*.
-- **Keyword Libraries**: Contain **Library Keywords**, which are typically implemented in Python or other technologies and, except for the standard libraries, are not part of Robot Framework itself. They can be either custom-made or third-party libraries implemented by the Robot Framework community. These are considered to be part of the *Adaptation Layer*.
+- **Resource Files**: Contain **User Keywords** and are also used to organize the importing of libraries and the definition of [variables](../glossary#variable). These are considered to be part of the test|task data in the *[Definition Layer](../glossary#definition-layer)*.
+- **Keyword Libraries**: Contain **Library Keywords**, which are typically implemented in Python or other technologies and, except for the standard libraries, are not part of Robot Framework itself. They can be either custom-made or third-party libraries implemented by the Robot Framework community. These are considered to be part of the *[Adaptation Layer](../glossary#adaptation-layer)*.
 
-Central resource files and libraries allow the separation of concerns, making the automation more modular and reusable across multiple suites, tests or tasks.
+Central [resource files](../glossary#resource-file) and libraries allow the separation of concerns, making the automation more modular and reusable across multiple suites, tests or tasks.
 
-The concepts of organizing are fundamental to working with Robot Framework and contribute to its flexibility and scalability in both test automation and RPA.
+The concepts of organizing are fundamental to working with Robot Framework and contribute to its flexibility and scalability in both test automation and [RPA](../glossary#robotic-process-automation).
+
+
+
 
 
 

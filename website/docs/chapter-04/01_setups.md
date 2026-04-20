@@ -19,16 +19,16 @@ Recall the different levels where a Setup can be defined
 
 
 Setups in Robot Framework are used to prepare the environment or system for execution or to verify that the requirements/preconditions needed for execution are met.
-They can be defined at the suite, test|task, or keyword level and are executed before the respective scope begins execution.
+They can be defined at the suite, [test](../glossary#test-case)|[task](../glossary#task), or [keyword](../glossary#keyword) level and are executed before the respective scope begins execution.
 
-A **Setup** is a single keyword with potential argument values that is called before all other keywords; or before tests|tasks in Suite Setup.
+A **Setup** is a single [keyword](../glossary#keyword) with potential [argument](../glossary#argument) values that is called before all other [keywords](../glossary#keyword); or before tests|[tasks](../glossary#task) in [Suite Setup](../glossary#suite-setup).
 
 Examples of typical use cases for Setups are:
 - Establishing connections to databases or services.
-- Initializing test data or configurations.
-- Setting the system under test to a known state.
+- Initializing [test data](../glossary#test-data) or configurations.
+- Setting the system under [test](../glossary#test-case) to a known state.
 - Logging into applications or systems.
-- Navigating to the feature under test.
+- Navigating to the feature under [test](../glossary#test-case).
 
 
 
@@ -50,12 +50,12 @@ Understand when Suite Setup is executed and used
 
 ::::
 
-A **Suite Setup** is executed before any tests|tasks or child suites within the suite are run.
+A **Suite Setup** is executed before any tests|[tasks](../glossary#task) or child suites within the suite are run.
 It is used to prepare the environment or perform actions that need to occur before the entire suite runs.
-Since it is only executed once before all tests|tasks or child suites, it can save time, rather than executing the action for each test|task individually.
+Since it is only executed once before all tests|[tasks](../glossary#task) or child suites, it can save time, rather than executing the action for each test|[task](../glossary#task) individually.
 
-**Key characteristics of Suite Setup:**
-- Suite Setup is a single keyword call with potential argument values.
+**Key characteristics of [Suite Setup](../glossary#suite-setup):**
+- [Suite Setup](../glossary#suite-setup) is a single [keyword](../glossary#keyword) call with potential [argument](../glossary#argument) values.
 - Executed before any tests|tasks and child suites in the suite.
 - If the Suite Setup fails, all tests|tasks in the suite and its child suites are marked as failed, and they are not executed.
 - Logged in the execution log as a separate section, indicating the setup status.
@@ -94,19 +94,19 @@ Understand when Test|Task Setup is executed and used
 
 ::::
 
-A **Test|Task Setup** is executed before a single test|task runs.
+A **Test|Task Setup** is executed before a single test|[task](../glossary#task) runs.
 It is used to prepare the specific conditions required for that test|task.
 
-You can define a default Test|Task Setup in the `*** Settings ***` section of the suite using the `Test Setup`|`Task Setup` setting.
+You can define a default [Test|Task Setup](../glossary#test-setup) in the `*** Settings ***` section of the suite using the `Test Setup`|`Task Setup` setting.
 This setup will be applied to all tests|tasks within the suite unless overridden and executed before each test|task.
 
 Individual tests|tasks can override the default setup by specifying their own `[Setup]` setting within the test|task.
 To disable the setup for a specific test|task, you can set `[Setup]    NONE`, which means that no setup will be executed for that test|task.
 
-**Key characteristics of Test|Task Setup:**
-- Test|Task Setup is a single keyword call with potential argument values.
+**Key characteristics of [Test|Task Setup](../glossary#test-setup):**
+- [Test|Task Setup](../glossary#test-setup) is a single keyword call with potential [argument](../glossary#argument) values.
 - Executed before the test|task starts.
-- If the Test|Task Setup fails, the test|task is marked as failed, and its body, including its main keywords, is not executed.
+- If the Test|Task Setup fails, the test|task is marked as failed, and its body, including its main [keywords](../glossary#keyword), is not executed.
 - Can be set globally for all tests|tasks in a suite and overridden locally.
 - Logged in the execution log as a separate section, indicating the setup status.
 
@@ -115,7 +115,7 @@ To disable the setup for a specific test|task, you can set `[Setup]    NONE`, wh
 - Executing preparation steps to navigate to the automated task or feature under test.
 - Distinguishing phases of a test|task in *setup* (aka *preparation* or *precondition checking*), *steps*, and *teardown* (aka *clean up* or *postconditions*).
 
-Example of defining a default Test|Task Setup in the suite settings and overriding it on a test case:
+Example of defining a default Test|Task Setup in the suite settings and overriding it on a [test case](../glossary#test-case):
 
 ```robotframework
 *** Settings ***
@@ -152,7 +152,7 @@ Recall key characteristics and syntax of Keyword Setup
 
 ::::
 
-A **Keyword Setup** is executed before the body of a user keyword is executed.
+A **Keyword Setup** is executed before the body of a [user keyword](../glossary#user-keyword) is executed.
 It allows for preparation steps specific to that keyword or ensures that the keyword's requirements are met before execution.
 
 **Key characteristics of Keyword Setup:**
@@ -163,7 +163,7 @@ It allows for preparation steps specific to that keyword or ensures that the key
 
 **Typical use cases:**
 - Opening connections or files needed by the keyword.
-- Initializing variables or data structures.
+- Initializing [variables](../glossary#variable) or data structures.
 - Ensuring preconditions specific to the keyword are met.
 
 Example of defining a Keyword Setup:
@@ -174,6 +174,9 @@ Process Data
     [Setup]    Open Data Connection
     Process the Data
 ```
+
+
+
 
 
 

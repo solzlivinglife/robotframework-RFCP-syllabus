@@ -1,15 +1,15 @@
 
 # 5.1 Advanced Variables
 
-Variables in Robot Framework, and in programming languages in general, can be more complex and can store various types of data.
+[Variables](../glossary#variable) in Robot Framework, and in programming languages in general, can be more complex and can store various types of data.
 Robot Framework also offers multiple ways to create different kinds of values and types.
 However, the built-in language support is limited to the basic [3.2.2.2 Primitive Data Types](chapter-03/02_variables.md#3222-primitive-data-types), [3.2.2.3 List Variable Definition](chapter-03/02_variables.md#3223-list-variable-definition), and [3.2.2.4 Dictionary Variable Definition](chapter-03/02_variables.md#3224-dictionary-variable-definition).
 
 
-This chapter provides more advanced knowledge about the different variable scopes, lists, dictionaries, their syntax, and some background on the most important Built-In Variables.
+This chapter provides more advanced knowledge about the different [variable scopes](../glossary#[variable](../glossary#variable)-scope), lists, dictionaries, their syntax, and some background on the most important [Built-In Variables](../glossary#built-in-variables).
 
-Understanding the **priority** and **scope** of variables in Robot Framework is crucial for effective test automation.
-Variables can be defined in multiple places and ways, and their availability and precedence depend on where and how they are created.
+Understanding the **priority** and **scope** of [variables](../glossary#variable) in Robot Framework is crucial for effective [test](../glossary#test-case) automation.
+[Variables](../glossary#variable) can be defined in multiple places and ways, and their availability and precedence depend on where and how they are created.
 
 
 
@@ -28,18 +28,18 @@ Understand the difference between statically defined and dynamically created var
 Variables can originate from various sources, and when variables with the same name exist,
 Robot Framework resolves them based on their priority.
 
-Several factors influence variable priority in Robot Framework: the type of variable, the time of (re-)definition, and the variable’s scope.
+Several factors influence variable priority in Robot Framework: the type of [variable](../glossary#variable), the time of (re-)definition, and the [variable](../glossary#variable)’s scope.
 
 In general, there are two types of variables regarding how they are created:
 - Statically defined or imported variables (e.g., in the `*** Variables ***` section, command-line options, imported resource files)
-- Dynamically created variables during Robot Framework execution (e.g., using the `VAR` syntax, assignment of return values from keywords or keyword arguments)
+- Dynamically created variables during Robot Framework execution (e.g., using the `VAR` syntax, assignment of return values from [keywords](../glossary#keyword) or [keyword](../glossary#keyword) arguments)
 
-Built-in variables cannot generally be sorted into one of these categories, as some are predefined globally while others are created during execution with a `SUITE` or `TEST` scope.
+[Built-in variables](../glossary#built-in-variables) cannot generally be sorted into one of these categories, as some are predefined globally while others are created during execution with a `SUITE` or `TEST` scope.
 
 Examples:
-- `${TEST_NAME}` is dynamically set during execution to the name of the currently running test case.
+- `${TEST_NAME}` is dynamically set during execution to the name of the currently running [test case](../glossary#test-case).
 - `${OUTPUT_DIR}` is statically defined before the execution and contains the directory where `output.xml`, `log.html` and `report.html` are written.
-- `${LOG_LEVEL}` is by default set statically via command line options or `INFO` as default, but can be changed, with the keyword `Set Log Level` during exection.
+- `${LOG_LEVEL}` is by default set statically via command line options or `INFO` as default, but can be changed, with the [keyword](../glossary#keyword) `Set Log Level` during exection.
 
 ### 5.1.1.1 Statically Defined or Imported Variables
 
@@ -61,11 +61,11 @@ In descending order, the priority is as follows:
 
 1. **Global Command-Line Variables**: Variables defined via command-line options like `--variable` or `--variablefile` have the highest priority. See [5.1.3 Global Variables via Command Line](chapter-05/01_advanced_variables.md#513-global-variables-via-command-line) for more details.
 
-2. **`*** Variables ***` Section**: Variables defined in the `*** Variables ***` section of a suite are set before any resource file from the `*** Settings ***` section is imported. See [3.2.2 `*** Variables ***` Section](chapter-03/02_variables.md#322--variables--section) for more details.
+2. **`*** Variables ***` Section**: Variables defined in the `*** Variables ***` section of a suite are set before any [resource file](../glossary#resource-file) from the `*** Settings ***` section is imported. See [3.2.2 `*** Variables ***` Section](chapter-03/02_variables.md#322--variables--section) for more details.
 
-3. **Resource Files**: Variables from resource files are imported in the order they are specified in the `*** Settings ***` section. See [2.4.2 Resource Files](chapter-02/04_keyword_imports.md#242-resource-files) for more details.
+3. **Resource Files**: Variables from [resource files](../glossary#resource-file) are imported in the order they are specified in the `*** Settings ***` section. See [2.4.2 Resource Files](chapter-02/04_keyword_imports.md#242-resource-files) for more details.
 
-   Within a resource file, the same order applies: variables defined in the `*** Variables ***` section of a resource file have higher priority than variables imported from other resource files.
+   Within a [resource file](../glossary#resource-file), the same order applies: variables defined in the `*** Variables ***` section of a [resource file](../glossary#resource-file) have higher priority than variables imported from other [resource files](../glossary#resource-file).
 
 However, variables defined during Robot Framework execution can overwrite or shadow these variables.
 
@@ -89,8 +89,8 @@ The rule of thumb here is: **"Last one wins!"**
 The scope of a variable defines its lifetime and availability.
 As long as a variable is in scope, the last definition takes precedence over the previous ones.
 
-For example, a local variable defined as a [3.3.5 User Keyword Arguments](chapter-03/03_user_keyword.md#335-user-keyword-arguments) has a higher priority than a suite variable defined in the `*** Variables ***` section of the suite file.
-However, once the keyword body scope is exited, the suite variable is back in scope with higher priority and the local variable is no longer existent.
+For example, a [local variable](../glossary#local-variable) defined as a [3.3.5 User Keyword Arguments](chapter-03/03_user_keyword.md#335-user-keyword-arguments) has a higher priority than a [suite variable](../glossary#suite-variable) defined in the `*** Variables ***` section of the [suite file](../glossary#suite-file).
+However, once the [keyword](../glossary#keyword) body scope is exited, the [suite variable](../glossary#suite-variable) is back in scope with higher priority and the [local variable](../glossary#local-variable) is no longer existent.
 
 
 ## 5.1.2 Variable Scopes
@@ -119,20 +119,20 @@ Recall how to define global variables and where they can be accessed
 
 ::::
 
-- **Definition**: Variables accessible everywhere during the test execution.
+- **Definition**: Variables accessible everywhere during the [test](../glossary#test-case) execution.
 - **Creation**:
   - Set from the command line using `--variable` or `--variablefile` options. (static)
-  - Created during execution using the `VAR` syntax with the `scope=GLOBAL` argument. (dynamic)
-- **Usage**: Ideal for configuration parameters that need to be consistent across the entire test run.
+  - Created during execution using the `VAR` syntax with the `scope=GLOBAL` [argument](../glossary#argument). (dynamic)
+- **Usage**: Ideal for configuration parameters that need to be consistent across the entire [test](../glossary#test-case) run.
 
-Because global variables set via the command line have the highest priority, they can override other variables defined in the suite or resource files.
-The most common use case for global variables is to define environment-specific or execution configurations, such as URLs, credentials, browser types, API keys, or similar data.
+Because [global variables](../glossary#global-variable) set via the command line have the highest priority, they can override other variables defined in the suite or [resource files](../glossary#resource-file).
+The most common use case for [global variables](../glossary#global-variable) is to define environment-specific or execution configurations, such as URLs, credentials, browser types, API keys, or similar data.
 
 See [5.1.3 Global Variables via Command Line](chapter-05/01_advanced_variables.md#513-global-variables-via-command-line) for more details.
 
 **Recommendation**:
-Global variables should always be defined using uppercase letters, like `${GLOBAL_VARIABLE}`, to distinguish them from local variables.
-Every global variable should have a corresponding default value defined either in a `*** Variables ***` section or imported from variable files, so that editors and IDEs can provide auto-completion and static code analysis.
+[Global variables](../glossary#global-variable) should always be defined using uppercase letters, like `${GLOBAL_VARIABLE}`, to distinguish them from [local variables](../glossary#local-variable).
+Every [global variable](../glossary#global-variable) should have a corresponding default value defined either in a `*** Variables ***` section or imported from [variable files](../glossary#variable-file), so that editors and IDEs can provide auto-completion and static code analysis.
 
 
 ### 5.1.2.2 . Suite Scope
@@ -147,23 +147,23 @@ Recall how to define suite variables and where they can be accessed
 
 ::::
 
-- **Definition**: Variables accessible within the test suite where they are defined, including all its tests|tasks and keywords.
+- **Definition**: Variables accessible within the test suite where they are defined, including all its tests|[tasks](../glossary#task) and [keywords](../glossary#keyword).
 - **Creation**:
-  - Defined in the `*** Variables ***` section of the suite file. (static)
-  - Imported from resource or variable files. (static)
-  - Set during the execution of a suite using the `VAR` syntax with the `scope=SUITE` argument. (dynamic)
-- **Usage**: Useful for sharing data among tests/tasks within the same suite or configuring suite-specific settings or setting default values for global variables.
+  - Defined in the `*** Variables ***` section of the [suite file](../glossary#suite-file). (static)
+  - Imported from resource or [variable files](../glossary#variable-file). (static)
+  - Set during the execution of a suite using the `VAR` syntax with the `scope=SUITE` [argument](../glossary#argument). (dynamic)
+- **Usage**: Useful for sharing data among tests/[tasks](../glossary#task) within the same suite or configuring suite-specific settings or setting default values for global variables.
 
 Suite scope is not recursive; variables in a higher-level suite, e.g. defined in [4.3 Initialization Files](chapter-04/03_init_files.md), are not available in lower-level suites. Use resource files to share variables across suites.
 
 Variables with a suite scope are generally statically defined or imported variables, but they can also be created dynamically during the execution of a suite. In this latter case, they have a higher priority than statically defined variables and can shadow or overwrite them.
 
-If a variable is defined in the `*** Variables ***` section of a suite file and is dynamically defined using the `VAR` syntax at the suite level, the variable value is overwritten with the new value.
+If a variable is defined in the `*** Variables ***` section of a [suite file](../glossary#suite-file) and is dynamically defined using the `VAR` syntax at the suite level, the variable value is overwritten with the new value.
 
-If a global variable is defined using the command line, and a suite-level variable with the same name is dynamically defined, the suite variable now shadows the global variable and has higher priority as long as the suite is in scope. Once the suite is finished or a sub-suite is executed, the global variable returns to scope with higher priority.
+If a global variable is defined using the command line, and a suite-level variable with the same name is dynamically defined, the [suite variable](../glossary#suite-variable) now shadows the [global variable](../glossary#global-variable) and has higher priority as long as the suite is in scope. Once the suite is finished or a sub-suite is executed, the [global variable](../glossary#global-variable) returns to scope with higher priority.
 
 **Recommendation**:
-Suite variables should be defined using uppercase letters, like `${SUITE_VARIABLE}`, to distinguish them from local variables. These variables should be defined in the `*** Variables ***` section of the suite file, even if they are dynamically overwritten during execution, so they are visible in the editor or IDE and can be used for auto-completion and static code analysis.
+[Suite variables](../glossary#suite-variable) should be defined using uppercase letters, like `${SUITE_VARIABLE}`, to distinguish them from [local variables](../glossary#local-variable). These variables should be defined in the `*** Variables ***` section of the suite file, even if they are dynamically overwritten during execution, so they are visible in the editor or IDE and can be used for auto-completion and static code analysis.
 
 ### 5.1.2.3 . Test|Task Scope
 
@@ -177,18 +177,18 @@ Recall how to define test|task variables and where they can be accessed
 
 ::::
 
-- **Definition**: Variables accessible within a single test|task and within all keywords it calls.
+- **Definition**: Variables accessible within a single test|[task](../glossary#task) and within all [keywords](../glossary#keyword) it calls.
 - **Creation**:
-  - Created during test execution using the `VAR` syntax with the `scope=TEST` or `scope=TASK` argument. (dynamic)
-- **Usage**: Appropriate for data that is specific to a single test|task.
+  - Created during test execution using the `VAR` syntax with the `scope=TEST` or `scope=TASK` [argument](../glossary#argument). (dynamic)
+- **Usage**: Appropriate for data that is specific to a single test|[task](../glossary#task).
 
-Test|Task variables cannot be created in suite setup or teardown, nor can they be imported. Test|Task scope variables are not available in other tests|tasks, even within the same suite.
+Test|[Task](../glossary#task) variables cannot be created in [suite setup](../glossary#suite-setup) or teardown, nor can they be imported. Test|Task scope variables are not available in other tests|[tasks](../glossary#task), even within the same suite.
 They can only be created dynamically, so they have higher priority than suite or global variables while in scope.
 Once a test|task is finished, the variables are no longer available. If they have shadowed a suite or global variable, that variable returns to scope.
 
 **Recommendation**:
 Test|Task variables should be used only when there is a clear need to share data across multiple keywords within a single test|task and when this is known by all team members.
-Otherwise, it is better to use local variables. Editor and IDE support for these variables is limited, so they should be used with caution.
+Otherwise, it is better to use [local variables](../glossary#local-variable). Editor and IDE support for these variables is limited, so they should be used with caution.
 
 
 ### 5.1.2.4 . Local Scope
@@ -207,10 +207,10 @@ Recall how to define local variables and where they can be accessed
 - **Creation**:
   - Variables assigned by keyword return values.
   - Variables defined using the `VAR` syntax (optional: with `scope=LOCAL`) within a keyword or test|task.
-  - Keyword arguments.
+  - Keyword [arguments](../glossary#argument).
 - **Usage**: Commonly used to temporarily store data and pass it to other keywords.
 
-Local variables are the most commonly used variables in Robot Framework and have the fewest side effects. They should be preferred over other variable scopes unless there is an explicit need to share data across scope boundaries.
+Local variables are the most commonly used variables in Robot Framework and have the fewest side effects. They should be preferred over other [variable scopes](../glossary#variable-scope) unless there is an explicit need to share data across scope boundaries.
 
 **Recommendation**:
 Local variables should always be defined using lowercase letters, like `${local_variable}`, to distinguish them from other variables.
@@ -232,9 +232,9 @@ Calculate Sum
     RETURN    ${result}
 ```
 
-In this example, the variable `${trainer_count}` is only available in the test case itself and not in the keyword `Calculate Sum`.
-Therefore, its value has to be passed as an argument to `Calculate Sum`, which assigns the value stored in `${trainer_count}` to the local variable `${num1}` within `Calculate Sum`.
-Additionally, `${result}` is only available within `Calculate Sum`, and only its value is returned to the test case, where it is assigned to `${total_people}`.
+In this example, the variable `${trainer_count}` is only available in the [test case](../glossary#test-case) itself and not in the keyword `Calculate Sum`.
+Therefore, its value has to be passed as an argument to `Calculate Sum`, which assigns the value stored in `${trainer_count}` to the [local variable](../glossary#local-variable) `${num1}` within `Calculate Sum`.
+Additionally, `${result}` is only available within `Calculate Sum`, and only its value is returned to the [test case](../glossary#test-case), where it is assigned to `${total_people}`.
 
 
 
@@ -260,8 +260,7 @@ Only scalar string values are supported.
     robot -v "hello:Hello world" .
     ```
 
-- Multiple Variables: `${name}` == `Robot` (str), `${version}` == `4.0` (str), `${patch}` == `${EMPTY}`
-    ```shell
+- Multiple Variables: `${name}` == `Robot` (str), `${version}` == `4.0` (str), `${patch}` == `${EMPTY}`    ```shell
     robot -v "name:Robot Framework" -v version:4.0 -v patch: .
     ```
 
@@ -285,20 +284,19 @@ Recall that assignments to `@{list}` variables convert values to lists automatic
 
 ::::
 
-Using the at-syntax (`@{}`) is required to define a list variable with `VAR` syntax or in the `*** Variables ***` section, but it is optional when assigning return values, which are list-like, from keywords to a variable.
+Using the at-syntax (`@{}`) is required to define a [list variable](../glossary#list-variable) with `VAR` syntax or in the `*** Variables ***` section, but it is optional when assigning return values, which are list-like, from keywords to a variable.
 
 Example:
 
 ```robotframework
-*** Test Cases ***
-Test List Variables
-    @{participants}    Get Participants                 # returns a list of names
+*** [Test Cases](../glossary#test-case) ***
+Test [List Variables](../glossary#list-variable)    @{participants}    Get Participants                 # returns a list of names
     ${trainers}        Get Trainers                     # returns a list of trainers
 ```
 
 Both assignments will contain a list if the keyword returns a list of values.
 
-However, if a keyword returns something other than a list but still list-like, it will be assigned without changes to the scalar variable `${trainers}` and will be converted to a list when using the at-syntax, as in `@{participants}`.
+However, if a keyword returns something other than a list but still list-like, it will be assigned without changes to the [scalar variable](../glossary#scalar-variable) `${trainers}` and will be converted to a list when using the at-syntax, as in `@{participants}`.
 List-like values can include Tuples, Sets, Dictionary Keys, or generator functions.
 As long as a value is iterable, it can be assigned to a list variable using the at-syntax to ensure it is a list after assignment.
 
@@ -329,8 +327,8 @@ Example:
 @{participants}    Alice    Bob    Charlie
 
 
-*** Test Cases ***
-Test List Variables
+*** [Test Cases](../glossary#test-case) ***
+Test [List Variables](../glossary#list-variable)
     Log Many    Alice    Bob    Charlie    # Logs three entries:    "Alice", "Bob", and "Charlie"
     Log Many    @{participants}            # Logs three entries:    "Alice", "Bob", and "Charlie"
     Log Many    ${participants}            # Logs only one entry:   "['Alice', 'Bob', 'Charlie']"
@@ -411,7 +409,7 @@ Log Participant
     Log    ${name} is ${age} years old
 ```
 
-Instead of calling the keyword `Log Participant` with two arguments, it is possible to use the unpacked dictionary variables `&{participant_one}` and `&{participant_two}` to call the keyword with two named arguments.
+Instead of calling the keyword `Log Participant` with two arguments, it is possible to use the unpacked dictionary variables `&{participant_one}` and `&{participant_two}` to call the keyword with two [named arguments](../glossary#named-argument).
 The dictionary keys act as the argument names and the values as the argument values.
 
 
@@ -428,7 +426,7 @@ Recall that Robot Framework provides access to execution information via Built-I
 
 ::::
 
-Robot Framework has a set of built-in variables that can be used in test cases, keywords, and other places. Some examples are:
+Robot Framework has a set of built-in variables that can be used in [test cases](../glossary#test-case), keywords, and other places. Some examples are:
 
 | Variable           | Description                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -451,6 +449,9 @@ Additionally, suite-related or test|task-related variables are available. These 
 | `${PREV_TEST_STATUS}`    | The status of the previous test.               |
 
 These variables can be used in test cases, keywords, and other places to access information about the current test execution.
+
+
+
 
 
 
