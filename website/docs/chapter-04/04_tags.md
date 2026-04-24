@@ -12,7 +12,7 @@ Recall the purpose of Test|Task Tags in Robot Framework
 ::::
 
 In Robot Framework, **tags** offer a simple yet powerful mechanism for classifying and controlling the execution of tests|tasks.
-Tags are free-form text labels that can be assigned to tests|tasks to provide metadata, enable flexible test selection, and organize test results.
+Tags are free-form text labels that can be assigned to tests|tasks to provide meta information, enable flexible test selection, and organize test results.
 
 Tags are also used to create a statistical summary of the test|task results in the execution protocols.
 
@@ -154,7 +154,7 @@ Examples:
 ## 4.4.3 Reserved Tags
 
 Tags starting with `robot:` are reserved for internal use by Robot Framework and should not be used in user-defined tags.
-Using own tags with this prefix may lead to unexpected behavior in test execution and reporting.
+Using your own tags with this prefix may lead to unexpected behavior in test execution and reporting.
 
 - `robot:exclude`: Marks tests|tasks that should be excluded from execution similar to `--exclude`.
 - `robot:skip`: Marks tests|tasks that should be skipped during execution similar to `--skip`.
