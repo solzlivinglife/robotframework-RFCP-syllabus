@@ -96,7 +96,7 @@
 - [`2.5.1 Documented Keyword Information`](website/docs/chapter-02/05_keyword_interface.md#251-documented-keyword-information)
   - LO-2.5.1 (K1) Recall the information that can be found in a keyword documentation.
   - [`2.5.1.1 Example Keyword `Should Be Equal``](website/docs/chapter-02/05_keyword_interface.md#2511-example-keyword-should-be-equal)
-  - [`2.5.1.2 Example Keyword `Run Process``](website/docs/chapter-02/05_keyword_interface.md#2512-example-keyword-run-process)
+  - [`2.5.1.2 Example Keyword `Set To Dictionary``](website/docs/chapter-02/05_keyword_interface.md#2512-example-keyword-set-to-dictionary)
   - [`2.5.1.3 Example Keyword `Get Regexp Matches``](website/docs/chapter-02/05_keyword_interface.md#2513-example-keyword-get-regexp-matches)
 - [`2.5.2 Keyword Arguments`](website/docs/chapter-02/05_keyword_interface.md#252-keyword-arguments)
   - LO-2.5.2 (K2) Understand the difference between argument kinds.
@@ -113,7 +113,7 @@
   - [`2.5.2.6 Named-Only Arguments`](website/docs/chapter-02/05_keyword_interface.md#2526-named-only-arguments)
     - LO-2.5.2.6 (K1) Recall what properties "Named-Only Arguments" have and how they are documented.
   - [`2.5.2.7 Free Named Arguments`](website/docs/chapter-02/05_keyword_interface.md#2527-free-named-arguments)
-    - LO-2.5.2.7 (K1) Recall how free named arguments are marked in documentation.
+    - LO-2.5.2.7 (K1) Recall how "Free Named Arguments" are marked in documentation.
   - [`2.5.2.8 Argument Types`](website/docs/chapter-02/05_keyword_interface.md#2528-argument-types)
     - LO-2.5.2.8 (K2) Understand the concept of argument types and automatic type conversion.
   - [`2.5.2.9 Return Types`](website/docs/chapter-02/05_keyword_interface.md#2529-return-types)

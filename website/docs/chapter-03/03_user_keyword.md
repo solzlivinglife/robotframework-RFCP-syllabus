@@ -61,9 +61,9 @@ Also spaces and underscores will be ignored when matching keyword names.
 So the keywords `Login To System`, and `log_into_system` are considered identical.
 
 To identify keywords that shall be executed, Robot Framework uses a matching algorithm that is case-insensitive and ignores spaces and underscores.
-- If then a full match is found, that keyword is used.
-- If no full match is found, the prefixes `Given`, `When`, `Then`, `And`, and `But` (case-insensitive), which are used in Behavior-Driven Specification style, are removed from the called keyword name to find a match.
-- If still no match is found, Robot Framework tries to match the name with keywords that have embedded arguments.
+- The prefixes Given, When, Then, And, and But (case-insensitive), which are used in Behavior-Driven Specification style, are removed from the called keyword name to find a match.
+- If no match is found, Robot Framework tries to match the name with keywords that have embedded arguments.
+- If still no match is found, a full match (including possible Given, When, Then, And and But) is tried.
 
 By default, if not explicitly defined by the library developers, all Library Keywords are named in **Title Case** with capital letters at the beginning of each word, and spaces between words.
 
@@ -350,8 +350,8 @@ the user ${action}
 
 ### 3.3.5.4 Other Argument Kinds
 
-Other argument kinds like **Named-Only Arguments**, **Free Named Arguments**, or
-**Variable Number of Positional Arguments** should be known,
+Other argument kinds like :term[Named-Only Arguments]{term="Named-Only Argument"}, :term[Free Named Arguments]{term="Free Named Argument"}, or
+:term[Variable Number of Positional Arguments] should be known,
 but their definition and usage are not part of this syllabus.
 
 
@@ -420,13 +420,14 @@ Get ISO Time
 ## 3.3.7 Keyword Conventions
 
 
-<!--
-TODO:
+
+{/* TODO:
 
 Should we have that  chapter???
 Opinions?
 And if, is this want we want to ask the participants to know?
--->
+*/}
+
 
 ::::lo[Learning Objectives]
 
