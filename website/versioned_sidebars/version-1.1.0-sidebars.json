@@ -8,7 +8,9 @@
       "type": "link",
       "label": "Download Syllabus PDF",
       "href": "/robotframework-RFCP-syllabus/pdfs/RFCP-Syllabus-__VERSION__.pdf",
-      "customProps": { "download": true }
+      "customProps": {
+        "download": true
+      }
     }
   ]
 }
